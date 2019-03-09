@@ -11,9 +11,9 @@
                         <li class="has-dropdown">
                             <a href="#">Book a Safari</a>
                             <ul class="dropdown">
-                                <li><a href="book-a-flight.php">Flight</a></li>
-                                <li><a href="book-a-hotel.php">Hotel</a></li>
-                                <li><a href="book-a-package.php">Package</a></li>
+                                <li><a href="bookings.php">Flight</a></li>
+                                <li><a href="bookings.php">Hotel</a></li>
+                                <li><a href="bookings.php">Package</a></li>
                             </ul>
                         </li>
                         <li><a href="about.php">About</a></li>
