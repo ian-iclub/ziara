@@ -20,9 +20,9 @@ class MailController extends Controller
         $booking->date_of_travel = '2019-04-16';
         $booking->flight_class = Booking::FIRST_CLASS;
         $booking->number_of_travellers = 2;
-        $booking->email = 'jack@dabbers.com';
+        $booking->email = 'jmnabangi@gmail.com';
 
-        Mail::to("info@ziara.com")->send(new DemoEmail($booking));
+        Mail::queue(new DemoEmail($booking));
 
         return (new \App\Mail\DemoEmail($booking));
     }
@@ -39,7 +39,7 @@ class MailController extends Controller
 
         // return json_decode(json_encode($booking), true);
 
-        Mail::to("info@ziara.com")->send(new DemoEmail($booking));
+        Mail::queue(new DemoEmail($booking));
 
         return (new \App\Mail\DemoEmail($booking));
     }
