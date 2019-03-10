@@ -569,7 +569,7 @@ figure {
     width: 100%;
     display: block;
     float: left;
-    padding: 9em 0;
+    padding: 2em 0 0.2em 0;
     clear: both;
 }
 
