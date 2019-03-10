@@ -1,10 +1,15 @@
 <?php
     $to = 'josenabz@gmail.com';
-    $name = $_POST["name"];
-    $email= $_POST["email"];
-    $text= $_POST["message"];
-    $subject= $_POST["subject"];
-    
+    //$name = $_POST["name"];
+    //$email= $_POST["email"];
+    //$text= $_POST["message"];
+    //$subject= $_POST["subject"];
+
+
+    $name = "Mini";
+    $email= "jmnabangi@gmail.com";
+    $text= "Mastuff mingi";
+    $subject= "Mouse";
 
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -21,7 +26,7 @@
         
     </table>';
 
-    if (@mail($to, $email, $message, $headers))
+    if (@mail($to, $subject, $message, $headers))
     {
         echo 'Your message has been sent.';
     }else{

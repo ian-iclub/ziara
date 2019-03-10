@@ -12,22 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
 Route::get('/about-us', function () {
-    return view('about_us');
-});
+    return view('about-us');
+})->name('about');
 
 ///// --- Book a XXX --- /////
 Route::get('/book-a-flight', function () {
     return view('book-a-flight');
-});
+})->name('flight');
 Route::get('/book-a-hotel', function () {
     return view('book-a-hotel');
-});
+})->name('hotel');
 Route::get('/book-a-package', function () {
     return view('book-a-package');
-});
+})->name('package');
 ///// --- End Book a XXX --- /////
 
 Route::get('/gallery', function () {
@@ -41,12 +41,12 @@ Route::get('/our-team', function () {
 });
 Route::get('/contact-us', function () {
     return view('contact-us');
-});
+})->name('contact');
 
 
 
 ///// --- Post a Booking --- /////
-Route::get('/book-a-flight', 'MailController@bookFlight');
-Route::get('/book-a-hotel',  'MailController@bookHotel');
-Route::get('/book-a-package', 'MailController@bookPackage');
+Route::post('/book-a-flight', 'MailController@bookFlight');
+Route::post('/book-a-hotel',  'MailController@bookHotel');
+Route::post('/book-a-package', 'MailController@bookPackage');
 ///// --- End Post a Booking --- /////
