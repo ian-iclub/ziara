@@ -1,9 +1,9 @@
-<nav class="colorlib-nav" role="navigation">
+<nav class="joc-nav" role="navigation">
     <div class="top-menu">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-2">
-                    <div id="colorlib-logo"><a href="/"><img src="../images/logo.png" height="120px" ></a></div>
+                    <div id="joc-logo"><a href="/"><img src="../images/logo.png" height="120px" ></a></div>
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>

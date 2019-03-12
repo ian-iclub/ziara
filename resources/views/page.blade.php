@@ -7,7 +7,7 @@
 
 @section('body')
 
-    <div class="colorlib-loader"></div>
+    <div class="joc-loader"></div>
 
     <div id="page">
         @include('partials.navbar')

@@ -1,5 +1,5 @@
 <!-- Booking area -->
-<div id="colorlib-reservation">
+<div id="joc-reservation">
     <!-- <div class="container"> -->
     <div class="row">
         <div class="search-wrap">
@@ -17,7 +17,7 @@
             <div class="tab-content">
                 <!-- Flight booking tab -->
                 <div id="flight" class="tab-pane fade in active">
-                    <form method="post" class="colorlib-form">
+                    <form method="post" class="joc-form">
                         <div class="row">
                             <!-- Date of travel -->
                             <div class="col-md-3">
@@ -69,7 +69,7 @@
                 <!-- Hotel Booking tab -->
                 <!-- Contact us details will be placed here rather than a form as detailed in the TODO.TODO -->
                 <div id="hotel" class="tab-pane fade">
-                    <form method="post" class="colorlib-form" style="display:none">
+                    <form method="post" class="joc-form" style="display:none">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="booknow">
@@ -118,10 +118,10 @@
                 </div>
                 <!-- Hotel Booking tab -->
 
-                
+
                 <!-- Package booking tab -->
                 <div id="package" class="tab-pane fade">
-                    <form method="post" class="colorlib-form">
+                    <form method="post" class="joc-form">
                         <div class="row">
                             <!-- Destination -->
                             <div class="col-md-3">
@@ -200,7 +200,7 @@
 
 
                 <div id="cruises" class="tab-pane fade" style="display:none">
-                    <form method="post" class="colorlib-form">
+                    <form method="post" class="joc-form">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">

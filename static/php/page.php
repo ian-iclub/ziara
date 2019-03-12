@@ -8,19 +8,19 @@
 </head>
 <body>
 
-    <div class="colorlib-loader"></div>
-    
+    <div class="joc-loader"></div>
+
     <div id="page">
         <?php
         @include("navbar.php");
-        
+
         echo $page;
         ?>
     </div>
 
     <?php
     echo $others;
-    
+
     @include_once("footer.php");
     ?>
     <div class="gototop js-top">

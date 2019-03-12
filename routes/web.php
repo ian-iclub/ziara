@@ -19,16 +19,22 @@ Route::get('/about-us', function () {
 })->name('about');
 
 ///// --- Book a XXX --- /////
-Route::get('/book-a-flight', function () {
-    return view('book');
-})->name('flight');
-Route::get('/book-a-hotel', function () {
-    return view('book');
-})->name('hotel');
-Route::get('/book-a-package', function () {
-    return view('book');
-})->name('package');
+// Route::get('/book-a-flight', function () {
+//     return view('book');
+// })->name('flight');
+// Route::get('/book-a-hotel', function () {
+//     return view('book');
+// })->name('hotel');
+// Route::get('/book-a-package', function () {
+//     return view('book');
+// })->name('package');
 ///// --- End Book a XXX --- /////
+
+// Booking page centralised route
+Route::get('/book', function () {
+    return view('book');
+})->name('book');
+// Booking page centralised route
 
 Route::get('/gallery', function () {
     return view('gallery');

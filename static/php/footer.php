@@ -1,13 +1,13 @@
-<footer id="colorlib-footer" role="contentinfo">
+<footer id="joc-footer" role="contentinfo">
     <div class="container">
         <div class="row row-pb-md">
             <div class="col-md-3"></div>
-            <div class="col-md-3 colorlib-widget">
+            <div class="col-md-3 joc-widget">
                 <!-- <h4>Ziara Travels</h4> -->
                 <h4><img src="../images/logo.png" height="100px" ></h4>
                 <p style="font-size:20px">Come Travel With Us</p>
                 <p>
-                    <ul class="colorlib-social-icons">
+                    <ul class="joc-social-icons">
                         <li><a href="#"><i class="icon-twitter"></i></a></li>
                         <li><a href="https://www.facebook.com/ziaratravels"><i class="icon-facebook"></i></a></li>
                         <li><a href="#"><i class="icon-linkedin"></i></a></li>
@@ -17,10 +17,10 @@
             </div>
 
             <!-- Book Now -->
-            <div class="col-md-2 colorlib-widget">
+            <div class="col-md-2 joc-widget">
                 <h4>Book Now</h4>
                 <p>
-                    <ul class="colorlib-footer-links">
+                    <ul class="joc-footer-links">
                         <li><a href="bookings.php">Flight</a></li>
                         <li><a href="bookings.php">Hotels</a></li>
                         <li><a href="bookings.php">Packages</a></li>
@@ -33,10 +33,10 @@
             <!-- Book Now -->
 
             <!-- Top Deals -->
-            <div class="col-md-2 colorlib-widget" style="display:none">
+            <div class="col-md-2 joc-widget" style="display:none">
                 <h4>Top Deals</h4>
                 <p>
-                    <ul class="colorlib-footer-links">
+                    <ul class="joc-footer-links">
                         <li><a href="#">Edina Hotel</a></li>
                         <li><a href="#">Quality Suites</a></li>
                         <li><a href="#">The Hotel Zephyr</a></li>
@@ -50,7 +50,7 @@
             <!-- Contact info -->
             <!-- <div class="col-md-3">
                 <h4>Contact Information</h4>
-                <ul class="colorlib-footer-links">
+                <ul class="joc-footer-links">
                     <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
                     <li><a href="tel://1234567920">(+254) 786 336 633</a></li>
                     <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
@@ -59,7 +59,7 @@
             </div> -->
             <div class="col-md-3">
                 <h4>Contact Information</h4>
-                <ul class="colorlib-footer-links">
+                <ul class="joc-footer-links">
                     <p><i class="icon-twitter"  style="padding-right: 0.4em;"></i> P.O. Box 55016-00200 Nairobi, Kenya</p>
                     <p><i class="icon-phone2"  style="padding-right: 0.4em;"></i>(+254) 786 336 633</p>
                     <p><i class="icon-mail5"  style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke">info@ziaratravels.co.ke</a><p>
@@ -73,13 +73,13 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <p style="display:none">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <!-- Link back to joc can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;<script>
                         document.write(new Date().getFullYear());
 
                     </script> All rights reserved | This template is made with <i class="icon-heart2" aria-hidden="true"></i>
-                    by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+                    by <a href="https://joc.com" target="_blank">joc</a>
+                    <!-- Link back to joc can't be removed. Template is licensed under CC BY 3.0. --></span>
                     <span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> ,
                         <a href="http://pexels.com/" target="_blank">Pexels.com</a></span>
                 </p>
