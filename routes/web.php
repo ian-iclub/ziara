@@ -20,13 +20,13 @@ Route::get('/about-us', function () {
 
 ///// --- Book a XXX --- /////
 Route::get('/book-a-flight', function () {
-    return view('book-a-flight');
+    return view('book');
 })->name('flight');
 Route::get('/book-a-hotel', function () {
-    return view('book-a-hotel');
+    return view('book');
 })->name('hotel');
 Route::get('/book-a-package', function () {
-    return view('book-a-package');
+    return view('book');
 })->name('package');
 ///// --- End Book a XXX --- /////
 
