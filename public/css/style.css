@@ -594,6 +594,10 @@ figure {
     clear: both;
 }
 
+.joc-tour{
+    font-family: 'Viga', sans-serif;
+}
+
 @media screen and (max-width: 768px) {
 
     #joc-hotel,

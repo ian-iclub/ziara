@@ -121,6 +121,24 @@
                             </div>
                         </div>
                     </form>
+                        <div class="row">
+                        <form method="post" class="joc-form">
+                            <div class="col-md-10 col-md-offset-1 animate-box" style="color:white">
+                                <h3 style="color:white">Contact us for Hotel Booking</h3>
+                                <div class="row contact-info-wrap">
+                                    <div class="col-md-3">
+                                        <p><i class="icon-address-book"  style="padding-right: 0.4em;"></i> P.O. Box 55016-00200 Nairobi, Kenya</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p><i class="icon-phone2"  style="padding-right: 0.4em;"></i>(+254) 786 336 633</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p><i class="icon-mail5"  style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke" style="color:#E4A300">info@ziaratravels.co.ke</a><p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- Hotel Booking tab -->
 

@@ -18,12 +18,12 @@
 
             <!-- Book Now -->
             <div class="col-md-2 joc-widget">
-                <h4>Book Now</h4>
+                <h4 style="font-family: 'Viga', sans-serif;">Book Now</h4>
                 <p>
                     <ul class="joc-footer-links">
-                        <li><a href="#">Flight</a></li>
-                        <li><a href="#">Hotels</a></li>
-                        <li><a href="#">Packages</a></li>
+                    <li><a href="{{route('book')}}">Flight</a></li>
+                        <li><a href="{{route('book')}}">Hotels</a></li>
+                        <li><a href="{{route('book')}}">Packages</a></li>
                         <!-- <li><a href="#">Car Rent</a></li>
                         <li><a href="#">Beach &amp; Resorts</a></li>
                         <li><a href="#">Cruises</a></li> -->
@@ -58,9 +58,9 @@
                 </ul>
             </div> -->
             <div class="col-md-3">
-                <h4>Contact Information</h4>
+                <h4 style="font-family: 'Viga', sans-serif;">Contact Information</h4>
                 <ul class="joc-footer-links">
-                    <p><i class="icon-twitter"  style="padding-right: 0.4em;"></i> P.O. Box 55016-00200 Nairobi, Kenya</p>
+                    <p><i class="icon-address-book"  style="padding-right: 0.4em;"></i> P.O. Box 55016-00200 Nairobi, Kenya</p>
                     <p><i class="icon-phone2"  style="padding-right: 0.4em;"></i>(+254) 786 336 633</p>
                     <p><i class="icon-mail5"  style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke">info@ziaratravels.co.ke</a><p>
                     <p><i class="icon-globe"  style="padding-right: 0.4em;"></i><a href="http://www.ziaratravels.co.ke/">Our Website</a></p>

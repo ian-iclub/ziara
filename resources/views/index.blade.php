@@ -10,9 +10,9 @@
 <div class="joc-tour joc-light-grey">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">
+            <div class="col-md-6 col-md-offset-5 text-center joc-heading animate-box">
                 <h2>Our Offers</h2>
-                <p>Enjoy our array of offers</p>
+                <p style="font-size:20px">Enjoy our array of offers</p>
             </div>
         </div>
     </div>
