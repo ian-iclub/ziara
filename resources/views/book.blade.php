@@ -46,8 +46,12 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
-                                        <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
-                                            title="Input the correct number format">
+                                        <input type="text" id="number" class="form-control" placeholder="07xx" required pattern="(07\d{8})$"
+                                            title="Please use 07 xxx format" >
+                                            <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
+                                            <!-- ? alert('matches') : alert('not')  -->
+                                            <!-- this.value : this.value.replace('\D', '') -->
+                                            <!-- this.value.replace('[^0-9]', '') -->
                                     </div>
                                 </div>
                             </div>
