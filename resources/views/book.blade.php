@@ -24,7 +24,7 @@
             <div class="tab-content">
                 <!-- Flight booking tab -->
                 <div id="flight" class="tab-pane fade in active">
-                    <form method="post" class="joc-form">
+                    <form method="post" class="joc-form" action="/book-a-flight">
                         <div class="row">
                             <!-- Full Name -->
                             <div class="col-md-3">
@@ -120,6 +120,7 @@
                                 </div>
                             </div>
                             <!-- Number of people travelling -->
+                            
                             <div class="col-md-2">
                                 <input type="submit" name="submit" id="submit" value="Book Flight" class="btn btn-primary btn-block">
                             </div>
@@ -205,7 +206,7 @@
 
                 <!-- Package booking tab -->
                 <div id="package" class="tab-pane fade">
-                    <form method="post" class="joc-form">
+                    <form method="post" class="joc-form" action="/book-a-package">
                         <div class="row">
                             <!-- Full Name -->
                             <div class="col-md-3">
