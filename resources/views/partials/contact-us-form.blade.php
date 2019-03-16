@@ -1,36 +1,37 @@
 <!-- Get in touch form -->
 <div class="col-md-10 col-md-offset-1 animate-box" style="padding-top: 3em">
     <h3>Get In Touch</h3>
-    <form action="#">
+    <form method="POST" action="contact-us">
+        @csrf
         <div class="row form-group">
             <div class="col-md-6 padding-bottom">
                 <label for="fname">First Name</label>
-                <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                <input type="text" id="fname" name="fname" class="form-control" placeholder="Your firstname" required>
             </div>
             <div class="col-md-6">
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+                <input type="text" id="lname" name="lname" class="form-control" placeholder="Your lastname">
             </div>
         </div>
 
         <div class="row form-group">
             <div class="col-md-12">
                 <label for="email">Email</label>
-                <input type="text" id="email" class="form-control" placeholder="Your email address">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             </div>
         </div>
 
         <div class="row form-group">
             <div class="col-md-12">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Your subject of this message" required>
             </div>
         </div>
 
         <div class="row form-group">
             <div class="col-md-12">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+                <textarea name="message" id="message" name="message" cols="30" rows="10" class="form-control" placeholder="Say something about us" required></textarea>
             </div>
         </div>
         <div class="form-group text-center">

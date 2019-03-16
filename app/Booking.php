@@ -87,5 +87,17 @@ class Booking extends Model
      * @var Integer
      */
     private $number_of_travellers;
+    /**
+     * The subject of message.
+     *
+     * @var String
+     */
+    public $subject;
+    /**
+     * The message.
+     *
+     * @var String
+     */
+    public $message;
     
 }

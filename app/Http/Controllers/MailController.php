@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Mail\DemoEmail;
+use App\Mail\ContactMail;
 use App\Booking;
 
 use Illuminate\Support\Facades\Mail;
@@ -83,6 +84,25 @@ class MailController extends Controller
 
         return redirect()->route('book', $error);
 
+    }
+
+    public function contactUs(Request $request)
+    {
+        $booking = new Booking();
+        $booking->customer_name = $request->lname . ' ' . $request->fname;
+        $booking->email = $request->email;
+        $booking->subject = "Contact us: " . $request->subject;
+        $booking->message = $request->message;
+        
+        Mail::send(new ContactMail($booking));
+
+        if (!Mail::failures()) {
+            return redirect()->route('home');
+        }
+
+        $error = "Could not send email, please try again...";
+
+        return redirect()->route('book', $error);
     }
 
 }

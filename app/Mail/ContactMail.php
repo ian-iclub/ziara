@@ -7,14 +7,12 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-use App\Booking;
-
-class DemoEmail extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
-    
+
     /**
-     * The demo object instance.
+     * The booking object instance.
      *
      * @var Booking
      */
@@ -39,13 +37,8 @@ class DemoEmail extends Mailable
     {
         return $this->to("josenabz@gmail.com")
                     ->from($this->booking->email)
-                    ->subject('Book a ' . $this->booking->booking_type)
-                    ->markdown('emails.demo')
-                    ->text('emails.demo_plain')
-                    ->with(
-                      [
-                            'booking_type' => $this->booking->booking_type,
-                            'booking' => json_encode($this->booking),
-                      ]);
+                    ->subject($this->booking->subject)
+                    ->markdown('emails.contact')
+                    ->text('emails.contact');
     }
 }

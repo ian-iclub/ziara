@@ -34,9 +34,9 @@ I {{ $booking->customer_name }}, would like to book a <strong>{{ $booking_type }
 
 <b>Contact Info</b><br>
 Email: <a href="mailto:{{ $booking->email }}">{{ $booking->email }}</a><br>
+@isset($booking->mobile_number)
 Phone: <a href="tel:{{ $booking->mobile_number }}">{{ $booking->mobile_number }}</a>
-
+@endisset
 <br><br>
 Thank You
-
 @endcomponent

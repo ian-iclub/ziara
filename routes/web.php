@@ -52,6 +52,7 @@ Route::get('/contact-us', function () {
 })->name('contact');
 
 
+Route::post('/contact-us', 'MailController@contactUs');
 
 ///// --- Post a Booking --- /////
 Route::post('/book-a-flight', 'MailController@bookFlight');
