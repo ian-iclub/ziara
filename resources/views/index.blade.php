@@ -17,94 +17,28 @@
         </div>
     </div>
     <div class="tour-wrap">
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-1.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Athens, Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-2.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Thailand</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-3.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Philippines</h2>
-                <span class="city">Lipa, Philippines</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-4.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-5.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-6.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-7.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(images/tour-8.jpg);">
-            </div>
-            <span class="desc">
-                <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i
-                            class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </span>
-        </a>
+
+        @forelse($offers as $offer)
+            <a href="#" class="tour-entry animate-box">
+                <div class="tour-img" style="background-image: url({{ $offer['image'] }});">
+                </div>
+                <span class="desc">
+                    <p class="star"><span>
+                        @for ($i = 0; $i < 5; $i++)
+                            @for ($i; $i < $offer['stars']; $i++)
+                                <i class="icon-star-full"></i>
+                            @endfor
+                            <i class="icon-star"></i>
+                        @endfor
+                    </span> {{ $offer['reviews'] }} Reviews</p>
+                    <h2>{{ $offer['title'] }}</h2>
+                    <span class="city">{{ $offer['place'] }}</span>
+                    <span class="price">${{ $offer['price'] }}</span>
+                </span>
+            </a>
+        @empty
+            <p>No offers</p>
+        @endforelse
     </div>
 </div>
 <!-- Offers -->

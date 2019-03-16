@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', "OfferController@index")->name('home');
+
+// Route::get('/', function () {
+//     return view('index');
+// })->name('home');
 Route::get('/about-us', function () {
     return view('about-us');
 })->name('about');
