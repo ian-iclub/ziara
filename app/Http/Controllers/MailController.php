@@ -17,21 +17,28 @@ class MailController extends Controller
         $booking->booking_type = Booking::FLIGHT;
         $booking->customer_name = $request->name;
         $booking->mobile_number = $request->number;
-        $booking->date_of_travel = $request->date_of_travel;
+        $booking->email = $request->email;
+        $booking->date_of_travel = $request->date;
         $booking->flight_class = $request->class;
         $booking->number_of_travellers = $request->travellers;
 
-        return $booking;
-
         // $booking->trip_type = Booking::RETURN;
         // $booking->destination = 'Mali';
-        $booking->date_of_travel = '2019-04-16';
+        // $booking->date_of_travel = '2019-04-16';
         
-        $booking->email = 'jmnabangi@gmail.com';
+        // $booking->email = 'jmnabangi@gmail.com';
 
-        Mail::queue(new DemoEmail($booking));
+        Mail::send(new DemoEmail($booking));
 
-        return (new \App\Mail\DemoEmail($booking));
+        if (!Mail::failures()) {
+            return redirect()->route('home');
+        }
+
+        $error = "Could not send email, please try again...";
+
+        return redirect()->route('book', $error);
+
+        // return (new \App\Mail\DemoEmail($booking));
     }
 
     public function bookHotel()

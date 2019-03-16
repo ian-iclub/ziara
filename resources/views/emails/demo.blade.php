@@ -1,9 +1,9 @@
 
 @component('mail::message', ['subcopy' => ''])
-Dear Ziara Tours/Travels,
+Dear Ziara Travels,
 
 @component('mail::panel')
-I would like to book a <strong>{{ $booking_type }}</strong> as follows:
+I {{ $booking->customer_name }}, would like to book a <strong>{{ $booking_type }}</strong> as follows:
 @component('mail::table')
 |           |          |
 | :------------ |:---------------|
@@ -32,9 +32,11 @@ I would like to book a <strong>{{ $booking_type }}</strong> as follows:
 
 @endcomponent
 
-Thank You,<br/>
-<i>
-<a href="mailto:{{ $booking->email }}">{{ $booking->email }}</a>
-</i>
+<b>Contact Info</b><br>
+Email: <a href="mailto:{{ $booking->email }}">{{ $booking->email }}</a><br>
+Phone: <a href="tel:{{ $booking->mobile_number }}">{{ $booking->mobile_number }}</a>
+
+<br><br>
+Thank You
 
 @endcomponent

@@ -34,7 +34,7 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-profile-male"></i>
-                                        <input type="text" id="name" class="form-control" placeholder="Full Name"
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Full Name"
                                             required>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
-                                        <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
+                                        <input type="text" id="number"  name="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
                                             title="07xxxxxxxx">
                                         <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
                                         <!-- ? alert('matches') : alert('not')  -->
@@ -66,7 +66,7 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-mail5"></i>
-                                        <input type="email" id="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        <input type="email" id="email"  name="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                             required>
                                     </div>
                                 </div>
@@ -82,8 +82,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-calendar2"></i>
-                                        <input type="text" id="date_of_travel" class="form-control date" placeholder="DD-MM-YYYY"
-                                            pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$"
+                                        <input type="text" id="date_of_travel" name="date" class="form-control date" placeholder="MM-DD-YYYY"
+                                            pattern="^([1-9]|1[012])[- /.]([1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$" required
                                             title="MM-DD-YYYY">
                                     </div>
                                 </div>
@@ -99,8 +99,9 @@
                                         <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
                                         {{-- <input type="text" id="class" class="form-control" placeholder="Class" required> --}}
-                                        <select name="people" id="class" class="form-control" required>
-                                            <option value="First CLass" style="color:black">First Class</option>
+                                        <select name="class" id="class" class="form-control" required>
+                                            <option value="" disabled selected>Select Class</option>
+                                            <option value="First Class" style="color:black">First Class</option>
                                             <option value="Business" style="color:black">Business</option>
                                             <option value="Economy" style="color:black">Economy</option>
                                         </select>
@@ -115,8 +116,8 @@
                                     <label for="guests">Travellers</label>
                                     <div class="form-field">
                                         <i class="icon icon-man"></i>
-                                        <input type="text" id="travellers" class="form-control" placeholder="Number of peple travelling"
-                                            required>
+                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="Number of peple travelling"
+                                            required max="10" min="1">
                                     </div>
                                 </div>
                             </div>
@@ -378,6 +379,10 @@
                     </form>
                 </div>
             </div>
+
+            @isset($error)
+                <div class="row">{{ $error }}</div>
+            @endisset
         </div>
     </div>
 </div>

@@ -39,7 +39,7 @@ class DemoEmail extends Mailable
     {
         // return $this->view('emails.demo')->from("info@ziara.com");
 
-        return $this->to("josenabz@gmail.com")
+        return $this->to("ianiclub@gmail.com")
                     ->from($this->booking->email)
                     ->subject('Book a ' . $this->booking->booking_type)
                     ->markdown('emails.demo')
