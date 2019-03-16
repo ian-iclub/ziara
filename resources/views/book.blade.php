@@ -25,45 +25,45 @@
                 <div id="flight" class="tab-pane fade in active">
                     <form method="post" class="joc-form">
                         <div class="row">
-                             <!-- Full Name -->
-                             <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date">Full Name</label>
-                                        <div class="form-field">
-                                            <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
-                                            <i class="icon icon-profile-male"></i>
-                                            <input type="text" id="name" class="form-control" placeholder="Full Name">
-                                        </div>
+                            <!-- Full Name -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Full Name</label>
+                                    <div class="form-field">
+                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                        <i class="icon icon-profile-male"></i>
+                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
                                     </div>
                                 </div>
-                                <!--  Full Name -->
+                            </div>
+                            <!--  Full Name -->
 
-                                <!-- Mobile Number -->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date">Mobile Number</label>
-                                        <div class="form-field">
-                                            <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
-                                            <i class="icon icon-phone5"></i>
-                                            <input type="number" id="number" class="form-control" placeholder="07xx">
-                                        </div>
+                            <!-- Mobile Number -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Mobile Number</label>
+                                    <div class="form-field">
+                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                        <i class="icon icon-phone5"></i>
+                                        <input type="number" id="number" class="form-control" placeholder="07xx">
                                     </div>
                                 </div>
-                                    <!--  Mobile Number -->
+                            </div>
+                            <!--  Mobile Number -->
 
-                                <!--Email  -->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date">Email</label>
-                                        <div class="form-field">
-                                            <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
-                                            <i class="icon icon-mail5"></i>
-                                            <input type="number" id="number" class="form-control" placeholder="Email">
-                                        </div>
+                            <!--Email  -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Email</label>
+                                    <div class="form-field">
+                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                        <i class="icon icon-mail5"></i>
+                                        <input type="number" id="number" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
-                                    <br><br><br><br>
-                                    <!--  Email -->
+                            </div>
+                            <br><br><br><br>
+                            <!--  Email -->
                         </div>
                         <div class="row">
                             <!-- Date of travel -->
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <!-- Number of people travelling -->
+                            <!-- Number of people travelling -->
                             <div class="col-md-2">
                                 <input type="submit" name="submit" id="submit" value="Book Flight" class="btn btn-primary btn-block">
                             </div>
@@ -168,13 +168,16 @@
                                 <h3 style="color:white">Contact us for Hotel Booking</h3>
                                 <div class="row contact-info-wrap">
                                     <div class="col-md-3">
-                                        <p><i class="icon-address-book"  style="padding-right: 0.4em;"></i> P.O. Box 55016-00200 Nairobi, Kenya</p>
+                                        <p><i class="icon-address-book" style="padding-right: 0.4em;"></i> P.O. Box
+                                            55016-00200 Nairobi, Kenya</p>
                                     </div>
                                     <div class="col-md-3">
-                                        <p><i class="icon-phone2"  style="padding-right: 0.4em;"></i>(+254) 786 336 633</p>
+                                        <p><i class="icon-phone2" style="padding-right: 0.4em;"></i>(+254) 786 336 633</p>
                                     </div>
                                     <div class="col-md-3">
-                                        <p><i class="icon-mail5"  style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke" style="color:#E4A300">info@ziaratravels.co.ke</a><p>
+                                        <p><i class="icon-mail5" style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke"
+                                                style="color:#E4A300">info@ziaratravels.co.ke</a>
+                                            <p>
                                     </div>
                                 </div>
                             </div>
@@ -187,6 +190,47 @@
                 <!-- Package booking tab -->
                 <div id="package" class="tab-pane fade">
                     <form method="post" class="joc-form">
+                        <div class="row">
+                            <!-- Full Name -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Full Name</label>
+                                    <div class="form-field">
+                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                        <i class="icon icon-profile-male"></i>
+                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  Full Name -->
+
+                            <!-- Mobile Number -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Mobile Number</label>
+                                    <div class="form-field">
+                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                        <i class="icon icon-phone5"></i>
+                                        <input type="number" id="number" class="form-control" placeholder="07xx">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  Mobile Number -->
+
+                            <!--Email  -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Email</label>
+                                    <div class="form-field">
+                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                        <i class="icon icon-mail5"></i>
+                                        <input type="number" id="number" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <!--  Email -->
+                        </div>
                         <div class="row">
                             <!-- Destination -->
                             <div class="col-md-3">
@@ -210,14 +254,14 @@
                                         <i class="icon icon-plane"></i>
                                         <select name="people" id="trip" class="form-control">
                                             <option value="#" style="color:black" value="1-Way">One way</option>
-                                            <option value="#" style="color:black"  value="Return">Return</option>
+                                            <option value="#" style="color:black" value="Return">Return</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                             <!-- Trip Type -->
+                            <!-- Trip Type -->
 
-                             <!-- Budget -->
+                            <!-- Budget -->
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="text">Budget</label>
@@ -261,7 +305,7 @@
                         </div>
                     </form>
                 </div>
-                 <!-- Package booking tab -->
+                <!-- Package booking tab -->
 
 
                 <div id="cruises" class="tab-pane fade" style="display:none">
