@@ -19,6 +19,24 @@ class Booking extends Model
     const FIRST_CLASS = 'First Class';
     const BUSINESS_CLASS = 'Business Class';
     const ECONOMY_CLASS = 'Economy Class';
+     /**
+     * The customer's name
+     *
+     * @var String
+     */
+    private $customer_name;
+     /**
+     * The customer's phone number
+     *
+     * @var int
+     */
+    private $mobile_number;
+     /**
+     * The customer's email
+     *
+     * @var String
+     */
+    private $email;
     /**
      * The booking type i.e flight, hotel, package
      *
@@ -69,10 +87,5 @@ class Booking extends Model
      * @var Integer
      */
     private $number_of_travellers;
-    /**
-     * The person making the booking
-     *
-     * @var String
-     */
-    private $email;
+    
 }

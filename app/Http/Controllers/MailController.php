@@ -11,15 +11,22 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function bookFlight()
+    public function bookFlight(Request $request)
     {
         $booking = new Booking();
         $booking->booking_type = Booking::FLIGHT;
+        $booking->customer_name = $request->name;
+        $booking->mobile_number = $request->number;
+        $booking->date_of_travel = $request->date_of_travel;
+        $booking->flight_class = $request->class;
+        $booking->number_of_travellers = $request->travellers;
+
+        return $booking;
+
         // $booking->trip_type = Booking::RETURN;
         // $booking->destination = 'Mali';
         $booking->date_of_travel = '2019-04-16';
-        $booking->flight_class = Booking::FIRST_CLASS;
-        $booking->number_of_travellers = 2;
+        
         $booking->email = 'jmnabangi@gmail.com';
 
         Mail::queue(new DemoEmail($booking));
@@ -44,7 +51,7 @@ class MailController extends Controller
         return (new \App\Mail\DemoEmail($booking));
     }
 
-    public function bookPackage()
+    public function bookPackage(Request $request)
     {
         $booking = new Booking();
         $booking->booking_type = Booking::PACKAGE;
