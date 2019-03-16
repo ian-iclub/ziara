@@ -32,7 +32,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-profile-male"></i>
-                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
+                                        <input type="text" id="name" class="form-control" placeholder="Full Name"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +46,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
-                                        <input type="number" id="number" class="form-control" placeholder="07xx">
+                                        <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
+                                            title="Input the correct number format">
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +60,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-mail5"></i>
-                                        <input type="number" id="number" class="form-control" placeholder="Email">
+                                        <input type="email" id="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -198,7 +201,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-profile-male"></i>
-                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
+                                        <input type="text" id="name" class="form-control" placeholder="Full Name"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +215,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
-                                        <input type="number" id="number" class="form-control" placeholder="07xx">
+                                        <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
+                                            title="Input the correct number format">
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +229,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-mail5"></i>
-                                        <input type="number" id="number" class="form-control" placeholder="Email">
+                                        <input type="email" id="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                            required>
                                     </div>
                                 </div>
                             </div>
