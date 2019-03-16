@@ -25,47 +25,47 @@
                 <div id="flight" class="tab-pane fade in active">
                     <form method="post" class="joc-form">
                         <div class="row">
-                            <!-- Full Name -->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="date">Full Name</label>
-                                    <div class="form-field">
-                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
-                                        <i class="icon icon-profile-male"></i>
-                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
+                             <!-- Full Name -->
+                             <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date">Full Name</label>
+                                        <div class="form-field">
+                                            <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                            <i class="icon icon-profile-male"></i>
+                                            <input type="text" id="name" class="form-control" placeholder="Full Name">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--  Full Name -->
+                                <!--  Full Name -->
 
-                            <!-- Mobile Number -->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="date">Mobile Number</label>
-                                    <div class="form-field">
-                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
-                                        <i class="icon icon-phone5"></i>
-                                        <input type="number" id="number" class="form-control" placeholder="07xx">
+                                <!-- Mobile Number -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date">Mobile Number</label>
+                                        <div class="form-field">
+                                            <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                            <i class="icon icon-phone5"></i>
+                                            <input type="number" id="number" class="form-control" placeholder="07xx">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                                <!--  Mobile Number -->
+                                    <!--  Mobile Number -->
 
-                            <!--Email  -->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="date">Email</label>
-                                    <div class="form-field">
-                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
-                                        <i class="icon icon-mail5"></i>
-                                        <input type="number" id="number" class="form-control" placeholder="Email">
+                                <!--Email  -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date">Email</label>
+                                        <div class="form-field">
+                                            <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
+                                            <i class="icon icon-mail5"></i>
+                                            <input type="number" id="number" class="form-control" placeholder="Email">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                                <br><br><br><br>
-                                <!--  Email -->
-
-
+                                    <br><br><br><br>
+                                    <!--  Email -->
+                        </div>
+                        <div class="row">
                             <!-- Date of travel -->
                             <div class="col-md-3">
                                 <div class="form-group">
