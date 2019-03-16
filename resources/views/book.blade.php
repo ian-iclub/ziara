@@ -46,12 +46,8 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
-                                        <input type="text" id="number" class="form-control" placeholder="07xx" required pattern="(07\d{8})$"
-                                            title="Please use 07 xxx format" >
-                                            <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
-                                            <!-- ? alert('matches') : alert('not')  -->
-                                            <!-- this.value : this.value.replace('\D', '') -->
-                                            <!-- this.value.replace('[^0-9]', '') -->
+                                        <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
+                                            title="07xxxxxxxx">
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +76,9 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-calendar2"></i>
-                                        <input type="text" id="date_of_travel" class="form-control date" placeholder="Travel Date">
+                                        <input type="text" id="date_of_travel" class="form-control" placeholder="DD-MM-YYYY"
+                                            pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$"
+                                            title="DD-MM-YYYY">
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +218,7 @@
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
                                         <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
-                                            title="Input the correct number format">
+                                            title="07xxxxxxxx">
                                     </div>
                                 </div>
                             </div>
@@ -277,7 +275,7 @@
                                     <label for="text">Budget</label>
                                     <div class="form-field">
                                         <i class="icon icon-dollar-sign"></i>
-                                        <input type="text" id="budget" class="form-control" placeholder="Budget">
+                                        <input type="number" id="budget" class="form-control" placeholder="Budget">
                                     </div>
                                 </div>
                             </div>
@@ -292,18 +290,18 @@
                                         <input type="text" id="date" class="form-control date" placeholder="Check-out date"> -->
                                         <i class="icon icon-calendar"></i>
                                         <select name="people" id="month" class="form-control">
-                                            <option value="#" style="color:black" value="January">January</option>
-                                            <option value="#" style="color:black" value="February">February</option>
-                                            <option value="#" style="color:black" value="March">March</option>
-                                            <option value="#" style="color:black" value="April">April</option>
-                                            <option value="#" style="color:black" value="May">May</option>
-                                            <option value="#" style="color:black" value="June">June</option>
-                                            <option value="#" style="color:black" value="July">July</option>
-                                            <option value="#" style="color:black" value="August">August</option>
-                                            <option value="#" style="color:black" value="September">September</option>
-                                            <option value="#" style="color:black" value="October">October</option>
-                                            <option value="#" style="color:black" value="November">November</option>
-                                            <option value="#" style="color:black" value="December">December</option>
+                                            <option style="color:black" value="January">January</option>
+                                            <option style="color:black" value="February">February</option>
+                                            <option style="color:black" value="March">March</option>
+                                            <option style="color:black" value="April">April</option>
+                                            <option style="color:black" value="May">May</option>
+                                            <option style="color:black" value="June">June</option>
+                                            <option style="color:black" value="July">July</option>
+                                            <option style="color:black" value="August">August</option>
+                                            <option style="color:black" value="September">September</option>
+                                            <option style="color:black" value="October">October</option>
+                                            <option style="color:black" value="November">November</option>
+                                            <option style="color:black" value="December">December</option>
                                         </select>
                                     </div>
                                 </div>
