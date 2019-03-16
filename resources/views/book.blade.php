@@ -218,7 +218,7 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-profile-male"></i>
-                                        <input type="text" id="name" class="form-control" placeholder="Full Name"
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Full Name"
                                             required>
                                     </div>
                                 </div>
@@ -232,7 +232,7 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
-                                        <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
+                                        <input type="text" id="number" name="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
                                             title="07xxxxxxxx">
                                         <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
                                         <!-- ? alert('matches') : alert('not')  -->
@@ -250,7 +250,7 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-mail5"></i>
-                                        <input type="email" id="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                             required>
                                     </div>
                                 </div>
@@ -265,7 +265,7 @@
                                     <label for="date">Destination</label>
                                     <div class="form-field">
                                         <i class="icon icon-location2"></i>
-                                        <input type="text" id="destination" class="form-control" placeholder="Where to.."
+                                        <input type="text" id="destination" name="destination" class="form-control" placeholder="Where to.."
                                             required>
                                     </div>
                                 </div>
@@ -280,7 +280,7 @@
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
-                                        <select name="people" id="trip" class="form-control" required>
+                                        <select name="trip" id="trip" class="form-control" required>
                                             <option value="#" style="color:black" value="1-Way">One way</option>
                                             <option value="#" style="color:black" value="Return">Return</option>
                                         </select>
@@ -295,7 +295,7 @@
                                     <label for="text">Budget</label>
                                     <div class="form-field">
                                         <i class="icon icon-dollar-sign"></i>
-                                        <input type="number" id="budget" class="form-control" placeholder="Budget"
+                                        <input type="number" name="budget" id="budget" class="form-control" placeholder="Budget"
                                             required>
                                     </div>
                                 </div>
@@ -310,7 +310,7 @@
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-out date"> -->
                                         <i class="icon icon-calendar"></i>
-                                        <select name="people" id="month" class="form-control" required>
+                                        <select name="month" id="month" class="form-control" required>
                                             <option style="color:black" value="January">January</option>
                                             <option style="color:black" value="February">February</option>
                                             <option style="color:black" value="March">March</option>

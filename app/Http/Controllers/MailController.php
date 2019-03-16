@@ -38,7 +38,6 @@ class MailController extends Controller
 
         return redirect()->route('book', $error);
 
-        // return (new \App\Mail\DemoEmail($booking));
     }
 
     public function bookHotel()
@@ -62,17 +61,28 @@ class MailController extends Controller
     {
         $booking = new Booking();
         $booking->booking_type = Booking::PACKAGE;
-        $booking->trip_type = Booking::RETURN;
-        $booking->destination = 'Mali';
-        $booking->budget = '72300';
-        $booking->month = 'January';
+        $booking->customer_name = $request->name;
+        $booking->mobile_number = $request->number;
+        $booking->email = $request->email;
+        $booking->trip_type = $request->class;
+        $booking->destination = $request->destination;
+        $booking->budget = $request->budget;
+        $booking->month = $request->month;
         // $booking->number_of_travellers = 2;
-        $booking->email = 'jack@dabbers.com';
+        // $booking->email = 'jack@dabbers.com';
 
         // return json_decode(json_encode($booking), true);
 
-        Mail::to("info@ziara.com")->send(new DemoEmail($booking));
+        Mail::send(new DemoEmail($booking));
 
-        return (new \App\Mail\DemoEmail($booking));
+        if (!Mail::failures()) {
+            return redirect()->route('home');
+        }
+
+        $error = "Could not send email, please try again...";
+
+        return redirect()->route('book', $error);
+
     }
+
 }
