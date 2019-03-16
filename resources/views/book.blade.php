@@ -81,9 +81,9 @@
                                     <div class="form-field">
                                         <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-calendar2"></i>
-                                        <input type="text" id="date_of_travel" class="form-control" placeholder="DD-MM-YYYY"
+                                        <input type="text" id="date_of_travel" class="form-control date" placeholder="DD-MM-YYYY"
                                             pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$"
-                                            title="DD-MM-YYYY" required>
+                                            title="MM-DD-YYYY">
                                     </div>
                                 </div>
                             </div>
