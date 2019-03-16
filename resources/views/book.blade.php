@@ -20,6 +20,7 @@
                             Package</a></li>
                 </ul>
             </div>
+
             <div class="tab-content">
                 <!-- Flight booking tab -->
                 <div id="flight" class="tab-pane fade in active">
@@ -48,10 +49,10 @@
                                         <i class="icon icon-phone5"></i>
                                         <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
                                             title="07xxxxxxxx">
-                                            <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
-                                            <!-- ? alert('matches') : alert('not')  -->
-                                            <!-- this.value : this.value.replace('\D', '') -->
-                                            <!-- this.value.replace('[^0-9]', '') -->
+                                        <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
+                                        <!-- ? alert('matches') : alert('not')  -->
+                                        <!-- this.value : this.value.replace('\D', '') -->
+                                        <!-- this.value.replace('[^0-9]', '') -->
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +83,7 @@
                                         <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date_of_travel" class="form-control" placeholder="DD-MM-YYYY"
                                             pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$"
-                                            title="DD-MM-YYYY">
+                                            title="DD-MM-YYYY" required>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +97,12 @@
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
-                                        <input type="text" id="class" class="form-control" placeholder="Class">
+                                        {{-- <input type="text" id="class" class="form-control" placeholder="Class" required> --}}
+                                        <select name="people" id="class" class="form-control" required>
+                                            <option value="First CLass" style="color:black">First Class</option>
+                                            <option value="Business" style="color:black">Business</option>
+                                            <option value="Economy" style="color:black">Economy</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +114,8 @@
                                     <label for="guests">Travellers</label>
                                     <div class="form-field">
                                         <i class="icon icon-man"></i>
-                                        <input type="text" id="travellers" class="form-control" placeholder="Number of peple travelling">
+                                        <input type="text" id="travellers" class="form-control" placeholder="Number of peple travelling"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -223,6 +230,10 @@
                                         <i class="icon icon-phone5"></i>
                                         <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
                                             title="07xxxxxxxx">
+                                        <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
+                                        <!-- ? alert('matches') : alert('not')  -->
+                                        <!-- this.value : this.value.replace('\D', '') -->
+                                        <!-- this.value.replace('[^0-9]', '') -->
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +261,8 @@
                                     <label for="date">Destination</label>
                                     <div class="form-field">
                                         <i class="icon icon-location2"></i>
-                                        <input type="text" id="destination" class="form-control" placeholder="Where to..">
+                                        <input type="text" id="destination" class="form-control" placeholder="Where to.."
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -264,7 +276,7 @@
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
-                                        <select name="people" id="trip" class="form-control">
+                                        <select name="people" id="trip" class="form-control" required>
                                             <option value="#" style="color:black" value="1-Way">One way</option>
                                             <option value="#" style="color:black" value="Return">Return</option>
                                         </select>
@@ -279,7 +291,8 @@
                                     <label for="text">Budget</label>
                                     <div class="form-field">
                                         <i class="icon icon-dollar-sign"></i>
-                                        <input type="number" id="budget" class="form-control" placeholder="Budget">
+                                        <input type="number" id="budget" class="form-control" placeholder="Budget"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -293,7 +306,7 @@
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-out date"> -->
                                         <i class="icon icon-calendar"></i>
-                                        <select name="people" id="month" class="form-control">
+                                        <select name="people" id="month" class="form-control" required>
                                             <option style="color:black" value="January">January</option>
                                             <option style="color:black" value="February">February</option>
                                             <option style="color:black" value="March">March</option>
@@ -311,7 +324,7 @@
                                 </div>
                             </div>
                             <!-- Month Selection -->
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <input type="submit" name="submit" id="submit" value="Book Package" class="btn btn-primary btn-block">
                             </div>
                         </div>
