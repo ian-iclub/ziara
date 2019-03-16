@@ -1819,10 +1819,10 @@ article .desc .meta span a {
     transition: 0.3s;
 }
 
-.container{
-    /* padding-left: 0px !important;
-    margin-left: 0px; */
-}
+/* .container{
+    padding-left: 0px !important;
+    margin-left: 0px;
+} */
 
 .nav-tabs li {
     font-size: 20px;
