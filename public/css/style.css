@@ -636,7 +636,7 @@ figure {
     clear: both;
     z-index: 1;
     position: absolute;
-    top: 400px;
+    top: 300px;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
