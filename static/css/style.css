@@ -1794,10 +1794,15 @@ article .desc .meta span a {
     transition: 0.3s;
 }
 
-.container{
+/* .container{
     padding-left: 0px !important;
     margin-left: 0px;
-}
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+} */
 
 .nav-tabs li {
     font-size: 20px;
