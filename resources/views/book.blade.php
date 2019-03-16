@@ -48,6 +48,10 @@
                                         <i class="icon icon-phone5"></i>
                                         <input type="text" id="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
                                             title="07xxxxxxxx">
+                                            <!-- oninput="this.value = this.value.match('/[0-9]+/g') === null ? this.value.replace('\D/g', '') : this.value" -->
+                                            <!-- ? alert('matches') : alert('not')  -->
+                                            <!-- this.value : this.value.replace('\D', '') -->
+                                            <!-- this.value.replace('[^0-9]', '') -->
                                     </div>
                                 </div>
                             </div>
