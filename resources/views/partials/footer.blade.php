@@ -1,7 +1,7 @@
 <footer id="joc-footer" role="contentinfo">
     <div class="container">
         <div class="row row-pb-md">
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-3 joc-widget">
                 <!-- <h4>Ziara Travels</h4> -->
                 <h4><img src="../images/logo.png" height="100px" ></h4>
@@ -10,8 +10,7 @@
                     <ul class="joc-social-icons">
                         <li><a href="#"><i class="icon-twitter"></i></a></li>
                         <li><a href="https://www.facebook.com/ziaratravels"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        <li><a href=""><i class="icon-instagram"></i></a></li>
                     </ul>
                 </p>
             </div>
@@ -33,7 +32,7 @@
             <!-- Book Now -->
 
             <!-- Top Deals -->
-            <div class="col-md-2 joc-widget" style="display:none">
+            <!-- <div class="col-md-2 joc-widget" style="display:none">
                 <h4>Top Deals</h4>
                 <p>
                     <ul class="joc-footer-links">
@@ -44,7 +43,7 @@
                         <li><a href="#">Hotel Epikk</a></li>
                     </ul>
                 </p>
-            </div>
+            </div> -->
             <!-- Top Deals -->
 
             <!-- Contact info -->
@@ -68,7 +67,7 @@
             </div>
              <!-- Contact info -->
 
-            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
@@ -80,11 +79,24 @@
                     </script> All rights reserved | This template is made with <i class="icon-heart2" aria-hidden="true"></i>
                     by <a href="https://joc.com" target="_blank">joc</a>
                     <!-- Link back to joc can't be removed. Template is licensed under CC BY 3.0. --></span>
-                    <span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> ,
+                    <span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> 
                         <a href="http://pexels.com/" target="_blank">Pexels.com</a></span>
                 </p>
-                <p>Copyright &copy;<script> document.write(new Date().getFullYear());</script>. All rights reserved | Design by Jack of Clubs</p>
+                <p>Copyright &copy;<script> document.write(new Date().getFullYear());</script>. All rights reserved<span class="joc-footer-brand"> | Design by Jack o' Clubs</span></p>
             </div>
         </div>
     </div>
 </footer>
+
+<!-- <style>
+
+    .joc-footer-brand:before {
+        content: " | ";
+    }
+    span.joc-footer-brand:hover, {
+        color: red;
+        content: 'Design by Jack of Clubs';
+    }
+
+    
+</style> -->
