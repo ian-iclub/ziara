@@ -590,7 +590,7 @@ figure {
     width: 100%;
     display: block;
     float: left;
-    padding: 2em 0 0.2em 0;
+    padding: 2em 0 2em 0;
     clear: both;
 }
 
@@ -797,7 +797,7 @@ figure {
 }
 
 .services {
-    padding: 7em 2em;
+    padding: 7em 0.6em;
 }
 
 .services .icon {
@@ -818,11 +818,11 @@ figure {
     vertical-align: middle;
     height: 120px;
     font-size: 60px;
-    color: #00BBF0;
+    color: #E4A300;
 }
 
 .aside-stretch {
-    background: #00BBF0;
+    background: #E4A300;
 }
 
 .aside-stretch:after {
@@ -832,7 +832,7 @@ figure {
     bottom: 0;
     content: '';
     width: 360%;
-    background: #00BBF0;
+    background: #E4A300;
 }
 
 @media screen and (max-width: 768px) {
@@ -957,7 +957,7 @@ figure {
 
     .tour-wrap .tour-entry .desc .price {
         color: #fff;
-        background: #00BBF0;
+        background: #E4A300;
         padding: 4px 7px;
     }
 }
@@ -1058,7 +1058,7 @@ figure {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: #00BBF0;
+    background: #E4A300;
     color: #fff;
     padding: 8px 12px;
     margin: 0;
@@ -1445,7 +1445,7 @@ figure {
 }
 
 #joc-hotel .owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
-    background: #00BBF0;
+    background: #E4A300;
 }
 
 .hotel-entry {
@@ -1463,7 +1463,7 @@ figure {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: #00BBF0;
+    background: #E4A300;
     color: #fff;
     padding: 8px 12px;
     margin: 0;
@@ -1536,7 +1536,7 @@ figure {
 
 .room-wrap .price span {
     font-size: 20px;
-    color: #00BBF0;
+    color: #E4A300;
 }
 
 .room-wrap .price small {
@@ -1905,7 +1905,7 @@ article .desc .meta span a {
     bottom: 0;
     content: '';
     width: 360%;
-    background: #00BBF0;
+    background: #E4A300;
 }
 
 .about-flex .about {
@@ -2267,7 +2267,7 @@ input[type="text"] {
     position: absolute;
     right: 0px;
     font-family: 'icomoon';
-    speak: none;
+    /* speak: none; */
     font-style: normal;
     font-weight: normal;
     font-variant: normal;

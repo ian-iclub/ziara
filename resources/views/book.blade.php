@@ -46,7 +46,6 @@
                                 <div class="form-group">
                                     <label for="date">Mobile Number</label>
                                     <div class="form-field">
-                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-phone5"></i>
                                         <input type="text" id="number"  name="number" class="form-control" placeholder="07xx" pattern="(07[0-9]{8})$"
                                             title="07xxxxxxxx">
@@ -64,7 +63,6 @@
                                 <div class="form-group">
                                     <label for="date">Email</label>
                                     <div class="form-field">
-                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-mail5"></i>
                                         <input type="email" id="email"  name="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                             required>
@@ -80,7 +78,6 @@
                                 <div class="form-group">
                                     <label for="date">Date of travel</label>
                                     <div class="form-field">
-                                        <!-- <input type="text" id="location" class="form-control" placeholder="Location"> -->
                                         <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date_of_travel" name="date" class="form-control date" placeholder="MM-DD-YYYY"
                                             pattern="^([1-9]|1[012])[- /.]([1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$" required
@@ -95,10 +92,7 @@
                                 <div class="form-group">
                                     <label for="date">Flight Class</label>
                                     <div class="form-field">
-                                        <!-- <i class="icon icon-calendar2"></i>
-                                        <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
-                                        {{-- <input type="text" id="class" class="form-control" placeholder="Class" required> --}}
                                         <select name="class" id="class" class="form-control" required>
                                             <option value="" disabled selected>Select Class</option>
                                             <option value="First Class" style="color:black">First Class</option>
@@ -122,7 +116,7 @@
                                 </div>
                             </div>
                             <!-- Number of people travelling -->
-                            
+
                             <div class="col-md-2">
                                 <input type="submit" name="submit" id="submit" value="Book Flight" class="btn btn-primary btn-block">
                             </div>
@@ -335,49 +329,6 @@
                     </form>
                 </div>
                 <!-- Package booking tab -->
-
-
-                <div id="cruises" class="tab-pane fade" style="display:none">
-                    <form method="post" class="joc-form">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="date">Where:</label>
-                                    <div class="form-field">
-                                        <input type="text" id="location" class="form-control" placeholder="Search Location">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="date">Start Date:</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-calendar2"></i>
-                                        <input type="text" id="date" class="form-control date" placeholder="Check-in date">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="guests">Categories</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-arrow-down3"></i>
-                                        <select name="category" id="category" class="form-control">
-                                            <option value="#">Suite</option>
-                                            <option value="#">Super Deluxe</option>
-                                            <option value="#">Balcony</option>
-                                            <option value="#">Economy</option>
-                                            <option value="#">Luxury</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <input type="submit" name="submit" id="submit" value="Find Cruises" class="btn btn-primary btn-block">
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
 
             @isset($error)

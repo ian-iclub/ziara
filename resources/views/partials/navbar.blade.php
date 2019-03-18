@@ -9,7 +9,7 @@
                     <ul>
                         <li class="{{ (strpos(Route::currentRouteName(), 'home') === 0) ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
                         <li class="{{ (strpos(Route::currentRouteName(), 'book') === 0) ? 'active' : '' }}"><a href="{{route('book')}}">Book a Safari</a></li>
-                        {{-- <li class="has-dropdown">
+                         {{-- <li class="has-dropdown">
                             <a href="#">Book a Safari</a>
                             <ul class="dropdown">
                                 <li><a href="{{route('flight')}}">Flight</a></li>
@@ -17,8 +17,8 @@
                                 <li><a href="{{route('package')}}">Package</a></li>
                             </ul>
                         </li> --}}
-                        <li class="{{ (strpos(Route::currentRouteName(), 'about') === 0) ? 'active' : '' }}"><a href="{{route('about')}}">About</a></li>
-                        <li class="{{ (strpos(Route::currentRouteName(), 'contact') === 0) ? 'active' : '' }}"><a href="{{route('contact')}}">Contact</a></li>
+                        <li class="{{ (strpos(Route::currentRouteName(), 'about') === 0) ? 'active' : '' }}"><a href="{{route('about')}}">About Us</a></li>
+                        <li class="{{ (strpos(Route::currentRouteName(), 'contact') === 0) ? 'active' : '' }}"><a href="{{route('contact')}}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

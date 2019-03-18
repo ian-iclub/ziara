@@ -1,6 +1,6 @@
 <!-- Get in touch form -->
 <div class="col-md-10 col-md-offset-1 animate-box" style="padding-top: 3em">
-    <h3>Get In Touch</h3>
+    <h3>Get in touch with us...</h3>
     <form method="POST" action="contact-us">
         @csrf
         <div class="row form-group">
