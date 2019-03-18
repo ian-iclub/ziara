@@ -110,7 +110,7 @@
                                     <label for="guests">Travellers</label>
                                     <div class="form-field">
                                         <i class="icon icon-man"></i>
-                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="Number of peple travelling"
+                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="Number of peple"
                                             required max="10" min="1">
                                     </div>
                                 </div>
@@ -275,6 +275,7 @@
                                         <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
                                         <select name="trip" id="trip" class="form-control" required>
+                                                <option value="" disabled selected>Trip Type</option>
                                             <option value="#" style="color:black" value="1-Way">One way</option>
                                             <option value="#" style="color:black" value="Return">Return</option>
                                         </select>
@@ -305,6 +306,7 @@
                                         <input type="text" id="date" class="form-control date" placeholder="Check-out date"> -->
                                         <i class="icon icon-calendar"></i>
                                         <select name="month" id="month" class="form-control" required>
+                                            <option value="" disabled selected>Month</option>
                                             <option style="color:black" value="January">January</option>
                                             <option style="color:black" value="February">February</option>
                                             <option style="color:black" value="March">March</option>
