@@ -1,7 +1,7 @@
 <footer id="joc-footer" role="contentinfo">
     <div class="container">
         <div class="row row-pb-md">
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
             <div class="col-md-3 joc-widget">
                 <h4><img src="../images/logo.png" height="100px" ></h4>
                 <p style="font-size:20px">Come Travel With Us</p>
@@ -13,6 +13,20 @@
                     </ul>
                 </p>
             </div>
+
+            <!-- Links -->
+            <div class="col-md-2 joc-widget">
+                <h4>Our Links</h4>
+                <p>
+                    <ul class="joc-footer-links">
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('book')}}">Book a Safari</a></li>
+                        <li><a href="{{route('about')}}">About Us</a></li>
+                        <li><a href="{{route('contact')}}">Contact Us</a></li>
+                    </ul>
+                </p>
+            </div>
+            <!-- Links -->
 
             <!-- Book Now -->
             <div class="col-md-2 joc-widget">
@@ -39,7 +53,7 @@
             </div>
              <!-- Contact info -->
 
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
