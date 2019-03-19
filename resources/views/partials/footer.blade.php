@@ -7,8 +7,8 @@
                 <p style="font-size:20px">Come Travel With Us</p>
                 <p>
                     <ul class="joc-social-icons">
-                        <li><a href="https://twitter.com/ZiaraTravels"><i class="icon-twitter"></i></a></li>
-                        <li><a href="https://www.facebook.com/ziaratravels"><i class="icon-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/ZiaraTravels"><i class="icon-twitter2"></i></a></li>
+                        <li><a href="https://www.facebook.com/ziaratravels"><i class="icon-facebook2"></i></a></li>
                         <li><a href="https://www.instagram.com/ziaratravels/"><i class="icon-instagram"></i></a></li>
                     </ul>
                 </p>
