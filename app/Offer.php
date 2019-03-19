@@ -78,7 +78,7 @@ class Offer extends Model
             [
                 "image" => "images/hotel-1.jpg",
                 "price" => "450",
-                "title" => "Hotel Edison",
+                "title" => "Hotel",
                 "place" => "New York, USA",
                 "desc" => "A small river named Duden flows by their place and supplies it with the
                 necessary regelialia."
@@ -86,7 +86,7 @@ class Offer extends Model
             [
                 "image" => "images/hotel-2.jpg",
                 "price" => "450",
-                "title" => "Hotel Edison",
+                "title" => "Edison",
                 "place" => "New York, USA",
                 "desc" => "A small river named Duden flows by their place and supplies it with the
                 necessary regelialia."
@@ -99,14 +99,14 @@ class Offer extends Model
                 "desc" => "A small river named Duden flows by their place and supplies it with the
                 necessary regelialia."
             ],
-            [
-                "image" => "images/hotel-4.jpg",
-                "price" => "450",
-                "title" => "Hotel Edison",
-                "place" => "New York, USA",
-                "desc" => "A small river named Duden flows by their place and supplies it with the
-                necessary regelialia."
-            ]
+            // [
+            //     "image" => "images/hotel-4.jpg",
+            //     "price" => "450",
+            //     "title" => "Hotel Edison",
+            //     "place" => "New York, USA",
+            //     "desc" => "A small river named Duden flows by their place and supplies it with the
+            //     necessary regelialia."
+            // ]
         ];
 
 }
