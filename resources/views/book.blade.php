@@ -8,7 +8,7 @@
 <!-- Booking area -->
 <div id="joc-reservation">
     <!-- <div class="container"> -->
-    <div class="row">
+    <div>
         <div class="search-wrap">
             <div class="container">
                 <ul class="nav nav-tabs">
@@ -110,7 +110,7 @@
                                     <label for="guests">Travellers</label>
                                     <div class="form-field">
                                         <i class="icon icon-man"></i>
-                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="Number of peple"
+                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="Number of people"
                                             required max="10" min="1">
                                     </div>
                                 </div>

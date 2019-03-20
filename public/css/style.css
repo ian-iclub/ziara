@@ -388,13 +388,35 @@ figure {
 
 @media screen and (max-width: 768px) {
     #joc-hero {
-        min-height: 1000px;
+        min-height: 100%;
+    }
+
+    #joc-hero .flexslider .slider-text>.slider-text-inner{
+        padding-top: 6em !important;
     }
 }
 
 @media screen and (max-width: 992px) {
     #joc-hero {
-        min-height: 1200px;
+        /* min-height: 1200px; */
+        min-height: 100%;
+    }
+
+   #joc-hero .flexslider .slider-text>.slider-text-inner{
+        padding-top: 6em !important;
+    }
+
+    #joc-hero .flexslider .slider-text>.slider-text-inner h1 {
+        font-size: 45px !important;
+    }
+
+    #joc-hero .flexslider .slider-text>.slider-text-inner h2 {
+        font-size: 18px !important;
+    }
+
+    #joc-reservation .search-wrap{
+        max-height: 20em;
+        overflow-x: hidden;
     }
 }
 
