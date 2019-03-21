@@ -24,7 +24,7 @@
             <div class="tab-content">
                 <!-- Flight booking tab -->
                 <div id="flight" class="tab-pane fade in active">
-                    <form method="post" class="joc-form" action="book-a-flight">
+                    <form method="" class="joc-form" action="">
                         @csrf
                         <div class="row">
                             <!-- Full Name -->
@@ -156,7 +156,7 @@
 
                 <!-- Package booking tab -->
                 <div id="package" class="tab-pane fade">
-                    <form method="post" class="joc-form" action="/book-a-package">
+                    <form method="" class="joc-form" action="">
                         @csrf
                         <div class="row">
                             <!-- Full Name -->
