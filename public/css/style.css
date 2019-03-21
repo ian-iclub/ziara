@@ -414,7 +414,7 @@ figure {
         font-size: 18px !important;
     }
 
-    #joc-reservation .search-wrap{
+    #joc-reservation .tab-content{
         max-height:  calc(100vh - 300px);
         overflow-x: hidden;
     }
