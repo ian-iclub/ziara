@@ -415,7 +415,7 @@ figure {
     }
 
     #joc-reservation .search-wrap{
-        max-height: 20em;
+        max-height:  calc(100vh - 300px);
         overflow-x: hidden;
     }
 }
