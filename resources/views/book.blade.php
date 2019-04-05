@@ -106,6 +106,7 @@
                                     <label for="date">Flight Class</label>
                                     <div class="form-field">
                                         <i class="icon icon-plane"></i>
+                                        <i class="icon icon-arrow-down3" style="right: 3em;"></i>
                                         <select name="class" id="class" class="form-control" required>
                                             <option value="" disabled selected>Select Class</option>
                                             <option value="First Class" style="color:black">First Class</option>
@@ -255,10 +256,10 @@
                             <!-- Budget -->
                             <div class="col-md-3">
                                 <div class="row">
-                                    <div class="col-sm-5 form-group">
+                                    <div class="col-sm-4 col-md-6 form-group">
                                         <label for="currency">Currency</label>
                                         <div class="form-field">
-                                            {{-- <i class="icon icon-arrow-down3"></i> --}}
+                                            <i class="icon icon-arrow-down3"></i>
                                             {{-- <i class="icon icon-arrow-down4"></i> --}}
                                             <select name="currency" id="currency" class="form-control" required style="padding-right: 0em;">
                                                 {{-- <option disabled selected>Currency</option> --}}
@@ -267,12 +268,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-7 form-group">
+                                    <div class="col-sm-8 col-md-6 form-group">
                                         <label for="text">Budget</label>
                                         <div class="form-field">
                                             <i class="icon icon-money"></i>
                                             <input type="number" name="budget" id="budget" class="form-control" placeholder="Budget"
-                                                required max="25000" style="padding-right: 1em;">
+                                                required max="25000" min="1" style="padding-right: 1em;">
                                         </div>
                                     </div>
                                 </div>
@@ -287,6 +288,7 @@
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-out date"> -->
                                         <i class="icon icon-calendar"></i>
+                                        <i class="icon icon-arrow-down3" style="right: 3em;"></i>
                                         <select name="month" id="month" class="form-control" required>
                                             <option value="" disabled selected>Month</option>
                                             <option style="color:black" value="January">January</option>
