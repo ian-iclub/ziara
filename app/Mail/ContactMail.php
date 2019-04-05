@@ -35,7 +35,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->to("josenabz@gmail.com")
+        return $this->to("ziarabooking@gmail.com")
                     ->from($this->booking->email)
                     ->subject($this->booking->subject)
                     ->markdown('emails.contact')

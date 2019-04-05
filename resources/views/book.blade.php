@@ -69,8 +69,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <br><br><br><br>
+                            {{-- <br><br><br><br> --}}
                             <!--  Email -->
+
+                            <!-- Destination -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="date">Destination</label>
+                                    <div class="form-field">
+                                        <i class="icon icon-location2"></i>
+                                        <input type="text" id="destination" name="destination" class="form-control" placeholder="Where to.."
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Destination -->
                         </div>
                         <div class="row">
                             <!-- Date of travel -->
@@ -134,14 +147,14 @@
                             <div class="col-md-10 col-md-offset-1 animate-box" style="color:white">
                                 <h3 style="color:white">Contact us for Hotel Booking</h3>
                                 <div class="row contact-info-wrap">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <p><i class="icon-address-book" style="padding-right: 0.4em;"></i> P.O. Box
                                             55016-00200 Nairobi, Kenya</p>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <p><i class="icon-phone2" style="padding-right: 0.4em;"></i><a href="tel:+254786336633"  style="color:#E4A300">(+254) 786 336 633</a></p>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <p><i class="icon-mail5" style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke"
                                                 style="color:#E4A300">info@ziaratravels.co.ke</a>
                                             <p>
@@ -203,10 +216,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <br><br><br><br>
+                            {{-- <br><br><br><br> --}}
                             <!--  Email -->
-                        </div>
-                        <div class="row">
+
                             <!-- Destination -->
                             <div class="col-md-3">
                                 <div class="form-group">
@@ -219,15 +231,17 @@
                                 </div>
                             </div>
                             <!-- Destination -->
-
+                        </div>
+                        <div class="row">
                             <!-- Trip Type -->
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="date">Trip Type</label>
                                     <div class="form-field">
                                         <!-- <i class="icon icon-calendar2"></i>
                                         <input type="text" id="date" class="form-control date" placeholder="Check-in date"> -->
                                         <i class="icon icon-plane"></i>
+                                        <i class="icon icon-arrow-down3" style="right: 3em;"></i>
                                         <select name="trip" id="trip" class="form-control" required>
                                                 <option value="" disabled selected>Trip Type</option>
                                             <option value="#" style="color:black" value="1-Way">One way</option>
@@ -239,20 +253,34 @@
                             <!-- Trip Type -->
 
                             <!-- Budget -->
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="text">Budget</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-dollar-sign"></i>
-                                        <input type="number" name="budget" id="budget" class="form-control" placeholder="Budget"
-                                            required>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label for="currency">Currency</label>
+                                        <div class="form-field">
+                                            {{-- <i class="icon icon-arrow-down3"></i> --}}
+                                            {{-- <i class="icon icon-arrow-down4"></i> --}}
+                                            <select name="currency" id="currency" class="form-control" required style="padding-right: 0em;">
+                                                {{-- <option disabled selected>Currency</option> --}}
+                                                <option selected style="color:black" value="1">Ksh</option>
+                                                <option style="color:black" value="2">$</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7 form-group">
+                                        <label for="text">Budget</label>
+                                        <div class="form-field">
+                                            <i class="icon icon-money"></i>
+                                            <input type="number" name="budget" id="budget" class="form-control" placeholder="Budget"
+                                                required max="25000" style="padding-right: 1em;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Budget -->
 
                             <!-- Month Selection -->
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="date">Select Month</label>
                                     <div class="form-field">
@@ -295,3 +323,27 @@
 </div>
 <!-- Booking area -->
 @stop
+
+@section('js')
+    <script>
+        $(function ($) {
+
+            var $currency = $('#currency');
+            var $budget = $('#budget');
+
+            $currency.on('change', function () {
+                if ($currency.val() == 1) {
+                    $budget.attr({
+                        "max": 25000,
+                    });
+                } else if ($currency.val() == 2)
+                    $budget.attr({
+                        "max": 250,
+                    });
+                else
+                    console.log($currency.val());
+                
+            });
+        });
+    </script>
+@endsection
