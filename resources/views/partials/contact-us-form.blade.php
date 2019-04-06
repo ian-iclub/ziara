@@ -1,7 +1,7 @@
 <!-- Get in touch form -->
 <div class="col-md-10 col-md-offset-1 animate-box" style="padding-top: 3em">
     <h3>Get in touch with us...</h3>
-    <form method="" action="">
+    <form method="post" action="">
         @csrf
         <div class="row form-group">
             <div class="col-md-6 padding-bottom">

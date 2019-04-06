@@ -37,7 +37,7 @@ class DemoEmail extends Mailable
      */
     public function build()
     {
-        return $this->to("ziarabooking@gmail.com")
+        return $this->to(config('mail.to'))
                     ->from($this->booking->email)
                     ->subject('Book a ' . $this->booking->booking_type)
                     ->markdown('emails.demo')

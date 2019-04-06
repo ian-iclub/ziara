@@ -22,6 +22,7 @@ class MailController extends Controller
         $booking->date_of_travel = $request->date;
         $booking->flight_class = $request->class;
         $booking->number_of_travellers = $request->travellers;
+        $booking->destination = $request->destination;
 
         // $booking->trip_type = Booking::RETURN;
         // $booking->destination = 'Mali';
@@ -67,6 +68,14 @@ class MailController extends Controller
         $booking->email = $request->email;
         $booking->trip_type = $request->class;
         $booking->destination = $request->destination;
+        $booking->currency = $request->currency;
+
+        if ($booking->currency == 1) {
+            $booking->currency = Booking::SHILLING;
+        } else if ($booking->currency == 2) {
+            $booking->currency = Booking::DOLLAR;
+        }
+        
         $booking->budget = $request->budget;
         $booking->month = $request->month;
         // $booking->number_of_travellers = 2;

@@ -19,22 +19,27 @@ class Booking extends Model
     const FIRST_CLASS = 'First Class';
     const BUSINESS_CLASS = 'Business Class';
     const ECONOMY_CLASS = 'Economy Class';
-     /**
+
+    // Currencies
+    const SHILLING = 'Ksh';
+    const DOLLAR = '$';
+
+    /**
      * The customer's name
      *
-     * @var String
+     * @var string
      */
     private $customer_name;
-     /**
+    /**
      * The customer's phone number
      *
      * @var int
      */
     private $mobile_number;
-     /**
+    /**
      * The customer's email
      *
-     * @var String
+     * @var string
      */
     private $email;
     /**
@@ -46,31 +51,37 @@ class Booking extends Model
     /**
      * The destination if applicable.
      *
-     * @var String
+     * @var string
      */
     private $destination;
     /**
      * The trip type if applicable i.e oneway = 1, return = 2
      *
-     * @var integer
+     * @var int
      */
     private $trip_type;
     /**
      * The budget available.
      *
-     * @var String
+     * @var string
+     */
+    private $currency;
+    /**
+     * The budget available.
+     *
+     * @var int
      */
     private $budget;
     /**
      * The month of package acquisition.
      *
-     * @var String
+     * @var string
      */
     private $month;
     /**
      * The date of travel.
      *
-     * @var String
+     * @var string
      */
     public $date_of_travel;
     /**
@@ -78,25 +89,25 @@ class Booking extends Model
      * 1 => First Class
      * 2 => Business Class
      *
-     * @var integer
+     * @var int
      */
     private $flight_class;
     /**
      * The number of people travelling.
      *
-     * @var Integer
+     * @var int
      */
     private $number_of_travellers;
     /**
      * The subject of message.
      *
-     * @var String
+     * @var string
      */
     public $subject;
     /**
      * The message.
      *
-     * @var String
+     * @var string
      */
     public $message;
     

@@ -24,7 +24,7 @@
             <div class="tab-content">
                 <!-- Flight booking tab -->
                 <div id="flight" class="tab-pane fade in active">
-                    <form method="" class="joc-form" action="">
+                    <form method="post" class="joc-form" action="book-a-flight">
                         @csrf
                         <div class="row">
                             <!-- Full Name -->
@@ -144,7 +144,7 @@
                 <!-- Contact us details will be placed here rather than a form as detailed in the TODO.TODO -->
                 <div id="hotel" class="tab-pane fade">
                     <div class="row">
-                        <form method="post" class="joc-form">
+                        <form class="joc-form">
                             <div class="col-md-10 col-md-offset-1 animate-box" style="color:white">
                                 <h3 style="color:white">Contact us for Hotel Booking</h3>
                                 <div class="row contact-info-wrap">
@@ -167,10 +167,9 @@
                 </div>
                 <!-- Hotel Booking tab -->
 
-
                 <!-- Package booking tab -->
                 <div id="package" class="tab-pane fade">
-                    <form method="" class="joc-form" action="">
+                    <form method="post" class="joc-form" action="book-a-package">
                         @csrf
                         <div class="row">
                             <!-- Full Name -->

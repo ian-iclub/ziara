@@ -56,9 +56,11 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'josenabz@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Ziara'),
+        'address' => env('MAIL_FROM_ADDRESS', 'ziarabooking@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Ziara Travels'),
     ],
+
+    'to' => env('MAIL_TO_ADDRESS', 'info@ziaratravels.co.ke'),
 
     /*
     |--------------------------------------------------------------------------

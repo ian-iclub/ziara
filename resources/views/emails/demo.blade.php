@@ -14,7 +14,7 @@ I {{ $booking->customer_name }}, would like to book a <strong>{{ $booking_type }
 | Trip Type:  | {{ $booking->trip_type }}  |
 @endisset
 @isset($booking->budget)
-| Budget:  | {{ $booking->budget }}  |
+| Budget:  | {{ $booking->currency . '' . number_format($booking->budget, 2) }}  |
 @endisset
 @isset($booking->month)
 | Month:  | {{ $booking->month }}  |
