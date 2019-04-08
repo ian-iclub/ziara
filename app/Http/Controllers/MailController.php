@@ -35,7 +35,7 @@ class MailController extends Controller
         $response = "Successfully booked!";
 
         if (!Mail::failures()) {
-            return redirect()->route('home', $response);
+            return redirect()->route('home')->with("response",$response);
         }
 
         $error = "Could not send email, please try again...";
