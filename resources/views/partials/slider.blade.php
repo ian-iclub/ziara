@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </li>
-            <li style="background-image: url(../images/home33.jpg);">
+            <li style="background-image: url(../images/home33.JPG);">
                 <div class="overlay"></div>
                 <div class="container-fluids">
                     <div class="row">
