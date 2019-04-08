@@ -27,13 +27,15 @@ class MailController extends Controller
         // $booking->trip_type = Booking::RETURN;
         // $booking->destination = 'Mali';
         // $booking->date_of_travel = '2019-04-16';
-        
+
         // $booking->email = 'jmnabangi@gmail.com';
 
         Mail::send(new DemoEmail($booking));
 
+        $response = "Successfully booked!";
+
         if (!Mail::failures()) {
-            return redirect()->route('home');
+            return redirect()->route('home', $response);
         }
 
         $error = "Could not send email, please try again...";
@@ -75,7 +77,7 @@ class MailController extends Controller
         } else if ($booking->currency == 2) {
             $booking->currency = Booking::DOLLAR;
         }
-        
+
         $booking->budget = $request->budget;
         $booking->month = $request->month;
         // $booking->number_of_travellers = 2;
@@ -102,11 +104,13 @@ class MailController extends Controller
         $booking->email = $request->email;
         $booking->subject = "Contact us: " . $request->subject;
         $booking->message = $request->message;
-        
+
         Mail::send(new ContactMail($booking));
 
+        $response = "Successfully booked!";
+
         if (!Mail::failures()) {
-            return redirect()->route('home');
+            return redirect()->route('home', $response);
         }
 
         $error = "Could not send email, please try again...";
