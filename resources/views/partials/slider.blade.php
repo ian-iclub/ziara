@@ -2,7 +2,7 @@
 <aside id="joc-hero">
     <div class="flexslider">
         <ul class="slides">
-            <li style="background-image: url(../images/home1.jpg);">
+            <li style="background-image: url(../images/home11.jpg);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </li>
-            <li style="background-image: url(../images/home2.jpg);">
+            <li style="background-image: url(../images/home22.jpg);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </li>
-            <li style="background-image: url(../images/home3.jpg);">
+            <li style="background-image: url(../images/home33.jpg);">
                 <div class="overlay"></div>
                 <div class="container-fluids">
                     <div class="row">

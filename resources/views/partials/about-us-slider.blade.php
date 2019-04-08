@@ -1,7 +1,7 @@
 <aside id="joc-hero">
     <div class="flexslider">
         <ul class="slides">
-            <li style="background-image: url(../images/about-us.jpg);">
+            <li style="background-image: url(../images/about-us1.jpg);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
