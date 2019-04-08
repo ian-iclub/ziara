@@ -59,12 +59,18 @@
                         <div class="item">
                             <div class="hotel-entry">
                                 <a class="hotel-img" style="background-image: url({{ $offer['image'] }});">
-                                    <p class="price"><span>${{ $offer['price'] }}</span><small></small></p>
+                                    <p class="price"><span>{{ $offer['period'] }}</span><small></small></p>
                                 </a>
                                 <div class="desc">
                                     <h3><a href="#">{{ $offer['title'] }}</a></h3>
-                                    <span class="place">{{ $offer['place'] }}</span>
-                                    <p>{{ $offer['desc'] }}</p>
+                                    <span class="place">{{ $offer['location'] }}</span>
+                                    {{-- <p>{{ $offer['desc'] }}</p> --}}
+                                    <p>
+                                            @foreach($offer['desc'] as $type)
+                                            <h4 class="desc-price">{{$type['currency'] . ' ' . number_format($type['price'], 0)}}</h4>
+                                            <p class="desc-content">{{$type['content']}}</p>
+                                            @endforeach
+                                    </p>
                                 </div>
                             </div>
                         </div>

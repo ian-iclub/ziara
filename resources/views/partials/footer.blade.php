@@ -48,7 +48,7 @@
                     <p><i class="icon-address-book"  style="padding-right: 0.4em;"></i> P.O. Box 55016-00200 Nairobi, Kenya</p>
                     <p><i class="icon-phone2"  style="padding-right: 0.4em;"></i><a href="tel:+254786336633">(+254) 786 336 633</a></p>
                     <p><i class="icon-mail5"  style="padding-right: 0.4em;"></i><a href="mailto:info@ziaratravels.co.ke">info@ziaratravels.co.ke</a><p>
-                    <p><i class="icon-globe"  style="padding-right: 0.4em;"></i><a href="http://www.ziaratravels.co.ke/">Our Website</a></p>
+                    {{-- <p><i class="icon-globe"  style="padding-right: 0.4em;"></i><a href="http://www.ziaratravels.co.ke/">Our Website</a></p> --}}
                 </ul>
             </div>
              <!-- Contact info -->

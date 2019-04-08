@@ -1099,6 +1099,14 @@ figure {
     display: block;
 }
 
+.desc-price{
+    background: #6C3226;
+    color: #fff;
+    padding: 8px 8px;
+    max-width: max-content;
+    font-size: 12px;
+}
+
 .tour .desc h2 {
     font-size: 20px;
     text-transform: uppercase;

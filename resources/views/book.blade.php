@@ -124,7 +124,7 @@
                                     <label for="guests">Travellers</label>
                                     <div class="form-field">
                                         <i class="icon icon-man"></i>
-                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="Number of people"
+                                        <input type="number" id="travellers" name="travellers" class="form-control" placeholder="0"
                                             required max="10" min="1">
                                     </div>
                                 </div>
@@ -343,7 +343,7 @@
                     });
                 else
                     console.log($currency.val());
-                
+
             });
         });
     </script>
