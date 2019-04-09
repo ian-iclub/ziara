@@ -1,8 +1,15 @@
+@if(Session::has('response'))
+<script>$('.alert').alert()</script>
+    <div class="alert alert-dismissable alert-success" style="margin-bottom: 0px;">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" style="z-index:9999">&times;</span>
+        </button>
+        <strong>
+            {{ Session::get('response') }}
+        </strong>
+    </div>
+@endif
 <!-- Slider -->
-@isset($response)
-    <a href="#" class="close" data-dismiss="alert">&times;</a>
-    <div class="row alert alert-success fade in">{{ $response }}</div>
-@endisset
 <aside id="joc-hero">
     <div class="flexslider">
         <ul class="slides">
