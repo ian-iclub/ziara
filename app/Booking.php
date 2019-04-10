@@ -103,12 +103,12 @@ class Booking extends Model
      *
      * @var string
      */
-    public $subject;
+    private $subject;
     /**
      * The message.
      *
      * @var string
      */
-    public $message;
-    
+    private $message;
+
 }

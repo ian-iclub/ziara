@@ -108,11 +108,11 @@ class MailController extends Controller
         $booking->subject = "Contact us: " . $request->subject;
         $booking->message = $request->message;
 
+        return $booking;
+
         Mail::send(new ContactMail($booking));
 
-        $success = "Successfully booked!";
-
-        if (!Mail::failures()) {
+            if (!Mail::failures()) {
             $success = "Details successfully sent!";
             return redirect()->route('contact')->with("success",$success);
         }
