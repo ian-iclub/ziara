@@ -1,8 +1,4 @@
 <!-- Slider -->
-@isset($response)
-    <a href="#" class="close" data-dismiss="alert">&times;</a>
-    <div class="row alert alert-success fade in">{{ $response }}</div>
-@endisset
 <aside id="joc-hero">
     <div class="flexslider">
         <ul class="slides">

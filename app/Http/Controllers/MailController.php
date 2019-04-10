@@ -19,7 +19,8 @@ class MailController extends Controller
         $booking->customer_name = $request->name;
         $booking->mobile_number = $request->number;
         $booking->email = $request->email;
-        $booking->date_of_travel = $request->date;
+        // $booking->date_of_travel = $request->date;
+        $booking->date_of_travel = date('d M Y', strtotime($request->date));
         $booking->flight_class = $request->class;
         $booking->number_of_travellers = $request->travellers;
         $booking->destination = $request->destination;
@@ -32,15 +33,15 @@ class MailController extends Controller
 
         Mail::send(new DemoEmail($booking));
 
-        $response = "Successfully booked!";
 
         if (!Mail::failures()) {
-            return redirect()->route('home')->with("response",$response);
+            $success = "Successfully booked!";
+            return redirect()->route('book')->with("success",$success);
         }
 
         $error = "Could not send email, please try again...";
 
-        return redirect()->route('book', $error);
+        return redirect()->route('book')->with("error",$error);
 
     }
 
@@ -60,6 +61,7 @@ class MailController extends Controller
 
         return (new \App\Mail\DemoEmail($booking));
     }
+
 
     public function bookPackage(Request $request)
     {
@@ -88,12 +90,13 @@ class MailController extends Controller
         Mail::send(new DemoEmail($booking));
 
         if (!Mail::failures()) {
-            return redirect()->route('home');
+            $success = "Successfully booked!";
+            return redirect()->route('book')->with("success",$success);
         }
 
         $error = "Could not send email, please try again...";
 
-        return redirect()->route('book', $error);
+        return redirect()->route('book')->with("error",$error);
 
     }
 
@@ -107,15 +110,16 @@ class MailController extends Controller
 
         Mail::send(new ContactMail($booking));
 
-        $response = "Successfully booked!";
+        $success = "Successfully booked!";
 
         if (!Mail::failures()) {
-            return redirect()->route('home', $response);
+            $success = "Details successfully sent!";
+            return redirect()->route('contact')->with("success",$success);
         }
 
-        $error = "Could not send email, please try again...";
+        $error = "Could not send details. Kindly try again....";
 
-        return redirect()->route('book', $error);
+        return redirect()->route('contact')->with("error",$error);
     }
 
 }
