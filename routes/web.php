@@ -59,3 +59,7 @@ Route::post('/book-a-flight', 'MailController@bookFlight');
 Route::post('/book-a-hotel',  'MailController@bookHotel');
 Route::post('/book-a-package', 'MailController@bookPackage');
 ///// --- End Post a Booking --- /////
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('home');
