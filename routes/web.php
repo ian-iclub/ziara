@@ -62,4 +62,4 @@ Route::post('/book-a-package', 'MailController@bookPackage');
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');

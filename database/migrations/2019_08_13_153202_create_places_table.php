@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOffersTable extends Migration
+class CreatePlacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateOffersTable extends Migration
      */
     public function up()
     {
-        Schema::create('offers', function (Blueprint $table) {
+        Schema::create('places', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('period');
-            $table->string('details');
-            $table->double('price', 8, 2);
-            $table->enum('currency', ['KES', 'USD']);
-            $table->boolean('active');
+            $table->string('image_url');
+            $table->string('title');
+            $table->string('location');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateOffersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offers');
+        Schema::dropIfExists('places');
     }
 }
