@@ -65,5 +65,5 @@ Auth::routes();
 Route::get('/admin', 'HomeController@index')->name('admin');
 
 
-Route::get('/admin/places', 'HomeController@index')->name('places');
-Route::get('/admin/offers', 'HomeController@index')->name('offers');
+Route::get('/admin/places', 'HomeController@places')->name('places');
+Route::get('/admin/offers', 'HomeController@offers')->name('offers');
