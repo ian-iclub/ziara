@@ -64,6 +64,5 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-
 Route::get('/admin/places', 'AdminController@places')->name('places');
 Route::get('/admin/offers', 'AdminController@offers')->name('offers');
