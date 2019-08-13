@@ -35,7 +35,7 @@ class MailController extends Controller
 
 
         if (!Mail::failures()) {
-            $success = "Successfully booked!";
+            $success = "Your request has been acknowledged and you will be contacted within 24hrs";
             return redirect()->route('book')->with("success",$success);
         }
 
@@ -90,7 +90,7 @@ class MailController extends Controller
         Mail::send(new DemoEmail($booking));
 
         if (!Mail::failures()) {
-            $success = "Successfully booked!";
+            $success = "Your request has been acknowledged and you will be contacted within 24hrs";
             return redirect()->route('book')->with("success",$success);
         }
 

@@ -125,7 +125,7 @@
                                     <div class="form-field">
                                         <i class="icon icon-man"></i>
                                         <input type="number" id="travellers" name="travellers" class="form-control" placeholder="0"
-                                            required max="10" min="1">
+                                            required min="1">
                                     </div>
                                 </div>
                             </div>
