@@ -62,8 +62,8 @@ Route::post('/book-a-package', 'MailController@bookPackage');
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('admin');
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 
-Route::get('/admin/places', 'HomeController@places')->name('places');
-Route::get('/admin/offers', 'HomeController@offers')->name('offers');
+Route::get('/admin/places', 'AdminController@places')->name('places');
+Route::get('/admin/offers', 'AdminController@offers')->name('offers');
