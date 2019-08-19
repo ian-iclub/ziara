@@ -33,12 +33,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('places') }}">{{ __('Places') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('offers') }}">{{ __('Offers') }}</a>
-                        </li>
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('places.index') }}">{{ __('Places') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('offers.index') }}">{{ __('Offers') }}</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,10 +57,10 @@
                             @endif
                         @else
                             <!-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('places') }}">{{ __('Places') }}</a>
+                                <a class="nav-link" href="{{ route('places.index') }}">{{ __('Places') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('offers') }}">{{ __('Offers') }}</a>
+                                <a class="nav-link" href="{{ route('offers.index') }}">{{ __('Offers') }}</a>
                             </li> -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

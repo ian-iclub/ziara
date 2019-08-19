@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Offer;
+use App\Place;
 use Illuminate\Contracts\Support\Renderable;
 
 class AdminController extends Controller
@@ -28,11 +30,11 @@ class AdminController extends Controller
 
     public function places()
     {
-        return 'places';
+        return Place::all();
     }
 
     public function offers()
     {
-        return 'offers';
+        return Offer::all();
     }
 }
