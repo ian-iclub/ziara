@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container col-md-12" style="height:100%;background-image: url(../images/login.jpg);background-size:cover;">
+    <div class="row justify-content-center" style="height:100%">
+        <div class="col-md-8 my-5 py-5">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -70,4 +70,13 @@
         </div>
     </div>
 </div>
+<style>
+/* .centeraligned {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
+</style>
 @endsection

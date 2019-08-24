@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Offer;
+
 use Illuminate\Contracts\Support\Renderable;
 
 class AdminController extends Controller
@@ -23,7 +25,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+        $offer = new Offer();
+        $offers = collect($offer->offers);
+
+        // var_dump($offers);
+
+        return view('admin.admin', compact('offers'));
     }
 
     public function places()

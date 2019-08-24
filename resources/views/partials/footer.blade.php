@@ -23,6 +23,7 @@
                         <li><a href="{{route('book')}}">Book a Safari</a></li>
                         <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
+                        <li><a href="{{route('login')}}">Admin Login</a></li>
                     </ul>
                 </p>
             </div>
