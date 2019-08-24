@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', "OfferController@index")->name('home');
+Route::get('/', "OfferController@frontendOffers")->name('home');
 
 // Route::get('/', function () {
 //     return view('index');
@@ -62,7 +62,15 @@ Route::post('/book-a-package', 'MailController@bookPackage');
 
 Auth::routes();
 
-Route::get('/admin', 'AdminController@index')->name('admin');
 
-Route::get('/admin/places', 'AdminController@places')->name('places');
-Route::get('/admin/offers', 'AdminController@offers')->name('offers');
+
+//Route::get('/admin/places', 'AdminController@places')->name('places');
+//Route::get('/admin/offers', 'AdminController@offers')->name('offers');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'AdminController@index')->name('admin');
+
+    Route::resource('places', 'PlaceController');
+    Route::resource('offers', 'OfferController');
+});
+

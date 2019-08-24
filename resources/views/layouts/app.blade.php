@@ -97,10 +97,10 @@
                             @endif
                         @else
                             <!-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('places') }}">{{ __('Places') }}</a>
+                                <a class="nav-link" href="{{ route('places.index') }}">{{ __('Places') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('offers') }}">{{ __('Offers') }}</a>
+                                <a class="nav-link" href="{{ route('offers.index') }}">{{ __('Offers') }}</a>
                             </li> -->
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ route('places') }}">{{ __('Places') }}</a>

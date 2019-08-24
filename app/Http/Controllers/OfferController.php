@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Offer;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class OfferController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -24,13 +25,15 @@ class OfferController extends Controller
         //     // return var_dump($offer->image);
         // }
         // return var_dump($offers);
-        return view('index', compact('offers'));
+//        return view('index', compact('offers'));
+
+        return response()->json($offers);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -40,19 +43,20 @@ class OfferController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
         //
+        $offer = Offer::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\offer  $offer
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show(offer $offer)
     {
@@ -63,7 +67,7 @@ class OfferController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\offer  $offer
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit(offer $offer)
     {
@@ -73,9 +77,9 @@ class OfferController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  \App\offer  $offer
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, offer $offer)
     {
@@ -86,10 +90,16 @@ class OfferController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\offer  $offer
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy(offer $offer)
     {
         //
+    }
+
+    public function frontendOffers()
+    {
+        $offers = Offer::all();
+        return view('index', compact('offers'));
     }
 }
