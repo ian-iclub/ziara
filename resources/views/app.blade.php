@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title_prefix', config('adminlte.title_prefix', ''))
-@yield('title', config('adminlte.title', 'Ziara Travels'))
-@yield('title_postfix', config('adminlte.title_postfix', ''))</title>
+        @yield('title', config('adminlte.title', 'Ziara Travels'))
+        @yield('title_postfix', config('adminlte.title_postfix', ''))
+    </title>
     <!-- Tell the browser to be responsive to screen width -->
     <link rel="icon" href="{{ asset('images/sunlogo.png') }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -56,7 +60,7 @@
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
+    <script src="{{ asset('js/respond.min.js') }}"></script>
 	<![endif]-->
 
     @yield('adminlte_css')

@@ -250,7 +250,7 @@
 
 		var owl2 = $('.owl-carousel2');
 		owl2.owlCarousel({
-			animateOut: 'fadeOut',
+            animateOut: 'fadeOut',
 		   animateIn: 'fadeIn',
 		   autoplay: true,
 		   loop:true,

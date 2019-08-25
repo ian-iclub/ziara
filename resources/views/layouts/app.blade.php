@@ -1,4 +1,3 @@
-{{-- @extends('app') --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -8,12 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Ziara') }} - Admin</title>
         {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
     <link rel="icon" href="{{ asset('images/sunlogo.png') }}">
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +17,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 
     {{-- Added --}}
     <!-- Google Font -->
@@ -32,34 +27,37 @@
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <!-- Bootstrap  -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
     <!-- Magnific Popup -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 
     <!-- Flexslider  -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}">
 
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 
     <!-- Date Picker -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
     <!-- Flaticons  -->
-    {{-- <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Modernizr JS -->
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/respond.min.js') }}"></script>
+    <![endif]-->
 
-
+    @yield('css')
     {{-- Added --}}
 </head>
-<body style="height:100%">
-
+<body>
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -74,17 +72,19 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    {{-- <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('places') }}">{{ __('Places') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('offers') }}">{{ __('Offers') }}</a>
-                        </li>
-                    </ul> --}}
+                    <ul class="navbar-nav mr-auto">
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('places.index') }}">{{ __('Places') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('offers.index') }}">{{ __('Offers') }}</a>
+                            </li>
+                        @endauth
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="float: right;">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -96,21 +96,9 @@
                                 </li>
                             @endif
                         @else
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('places.index') }}">{{ __('Places') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('offers.index') }}">{{ __('Offers') }}</a>
-                            </li> -->
-                            <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('places') }}">{{ __('Places') }}</a>
-                                </li>
-                                <li class="nav-item" class="py-2">
-                                    <a class="nav-link" href="{{ route('offers') }}">{{ __('Offers') }}</a>
-                                </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="carets"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -131,26 +119,40 @@
             </div>
         </nav>
 
-        {{-- <main class="py-4">
-            @yield('content')
-        </main> --}}
-        {{-- @yield('body') --}}
     </div>
-    <main class="">
-            @yield('content')
-        </main>
+
+    @yield('body')
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <!-- jQuery Easing -->
+    <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <!-- Waypoints -->
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <!-- Flexslider -->
+    <script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+    <!-- Owl carousel -->
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <!-- Magnific Popup -->
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/magnific-popup-options.js') }}"></script>
+    <!-- Date Picker -->
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <!-- Stellar Parallax -->
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Main -->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+    {{--    <!-- <script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.min.js') }}"></script>--}}
+    {{--    <script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.slimscroll.min.js') }}"></script>--}}
+    {{--    <script src="{{ asset('vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script> -->--}}
+
+    @yield('js')
 </body>
-{{-- @include('partials.footer') --}}
-
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-    </div>
 </html>
-
-<style>
-    .navbar-laravel
-    {
-        /* background-color: #2C2E3E; */
-        background-color: #E4A300;
-    }
-</style>

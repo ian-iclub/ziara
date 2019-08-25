@@ -14,4 +14,14 @@ class Place extends Model
     protected $fillable = [
         'image_url', 'title', 'location',
     ];
+
+    public function offers()
+    {
+        return $this->hasMany('App\Offer');
+    }
+
+    public function activeOffers()
+    {
+        return $this->hasMany('App\Offer')->where('offers.active', true);
+    }
 }

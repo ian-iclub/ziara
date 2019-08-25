@@ -25,10 +25,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $offer = new Offer();
-        $offers = collect($offer->offers);
+//        $offer = new Offer();
+//        $offers = collect($offer->offers);
 
         // var_dump($offers);
+
+        $offers = Place::has('activeOffers')->with('activeOffers')->get();
 
         return view('admin.admin', compact('offers'));
     }

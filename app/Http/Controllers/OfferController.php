@@ -25,9 +25,9 @@ class OfferController extends Controller
         //     // return var_dump($offer->image);
         // }
         // return var_dump($offers);
-//        return view('index', compact('offers'));
+        return view('admin.offers.index', compact('offers'));
 
-        return response()->json($offers);
+//        return response()->json($offers);
     }
 
     /**
@@ -99,7 +99,10 @@ class OfferController extends Controller
 
     public function frontendOffers()
     {
-        $offers = Offer::all();
+//        $offers = Offer::all();
+
+        $offer = new Offer();
+        $offers = collect($offer->offers);
         return view('index', compact('offers'));
     }
 }

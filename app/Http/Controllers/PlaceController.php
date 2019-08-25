@@ -17,7 +17,11 @@ class PlaceController extends Controller
     public function index()
     {
         //
-        return Place::all();
+        $places = Place::with('activeOffers')->get();
+
+//        return response()->json($places);
+
+        return view('admin.places.index', compact('places'));
     }
 
     /**
@@ -28,6 +32,7 @@ class PlaceController extends Controller
     public function create()
     {
         //
+        return null;
     }
 
     /**

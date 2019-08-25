@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container col-md-12" style="height:100%;background-image: url(../images/login.jpg);background-size:cover;">
+@section('body')
+    <div class="container col-md-12"
+         style="height:100%;background-image: {{ asset('images/login.jpg') }};background-size:cover;">
     <div class="row justify-content-center" style="height:100%">
         <div class="col-md-8 my-5 py-5">
             <div class="card">
