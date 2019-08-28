@@ -1194,7 +1194,7 @@
 .icon-th-list-outline:before {
   content: "\ea85";
 }
-.icon-news:before {
+.icon-report:before {
   content: "\ea86";
 }
 .icon-home-outline:before {
@@ -1929,7 +1929,7 @@
 .icon-office:before {
   content: "\eb7a";
 }
-.icon-newspaper:before {
+.icon-reportpaper:before {
   content: "\eb7b";
 }
 .icon-pencil:before {
@@ -3282,7 +3282,7 @@
 .icon-reddit:before {
   content: "\ed3d";
 }
-.icon-hackernews:before {
+.icon-hackerreport:before {
   content: "\ed3e";
 }
 .icon-wikipedia:before {
@@ -3417,7 +3417,7 @@
 .icon-clipboard4:before {
   content: "\e008";
 }
-.icon-newspaper2:before {
+.icon-reportpaper2:before {
   content: "\e009";
 }
 .icon-notebook:before {
@@ -3762,7 +3762,7 @@
 .icon-phone5:before {
   content: "\ed79";
 }
-.icon-news2:before {
+.icon-report2:before {
   content: "\ed7a";
 }
 .icon-mail7:before {

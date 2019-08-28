@@ -18,8 +18,8 @@
         {{--        </div>--}}
         <div class="row">
             <div class="col-md-12 animate-box">
+                @forelse($offers as $offer)
                 <div class="owl-carousel">
-                    @forelse($offers as $offer)
                         <div class="item">
                             <div class="hotel-entry">
                                 <a class="hotel-img" style="background-image: url({{ $offer['image_url'] }});">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     @empty
-                        <p>No offers</p>
+                        <p>No offers currently recorded</p>
                     @endforelse
                 </div>
             </div>
