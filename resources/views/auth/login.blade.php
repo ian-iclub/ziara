@@ -1,4 +1,7 @@
 @extends('layouts.app')
+{{-- @extends('admin.layouts.admin') --}}
+
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 @section('body')
     <div class="container col-md-12"
