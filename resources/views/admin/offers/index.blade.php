@@ -20,48 +20,52 @@
                     <form action="">
                         <div class="form-group">
                             <label for="inputLocation">Location</label>
-                            <select class="form-control" id="inputLocation">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                            <select class="form-control" id="inputLocation" name="location" required>
+                                @foreach($places as $place)
+                                    <option value="{{ $place->id }}">{{ $place->title }}
+                                        - {{ $place->location }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="inputPeriod">Period</label>
-                            <input type="text" class="form-control" id="inputPeriod" placeholder="Period in Months">
+                            <input type="text" class="form-control" id="inputPeriod" name="period" required
+                                   placeholder="E.g. Aug/Nov, Aug-Nov...">
                         </div>
                         <div class="form-group">
                             <label for="inputDetails">Details</label>
-                            <input type="text" class="form-control" id="inputDetails"
-                                placeholder="Details concerning the offer">
+                            <input type="text" class="form-control" id="inputDetails" name="details" required
+                                   placeholder="Details concerning the offer">
                         </div>
                         <div class="row">
-                            <div class="col-md-4" style="paddint-top:20px">
+                            <div class="col-md-4" style="padding-top:20px">
                                 <div class="form-group">
                                     <label for="inputPrice">Price</label>
-                                    <input type="number" class="form-control" id="inputPrice"
-                                        placeholder=00>
+                                    <input type="number" class="form-control" id="inputPrice" name="price" required
+                                           placeholder='00' min="1">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="inputCurrency">Currency</label>
-                                    <input type="text" class="form-control" id="inputCurrency"
-                                        placeholder="Enter the currency">
+                                    <select class="form-control" id="inputCurrency" name="currency" required>
+                                        <option value="KES">KES</option>
+                                        <option value="USD">USD</option>
+
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Save as active?</label><br>
                                 <div class="form-check form-check-inline">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inputYes"
-                                            value="Yes">
+                                        <input class="form-check-input" type="radio" name="active" id="inputYes"
+                                               value="Yes">
                                         <label class="form-check-label" for="inputYes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inputNo"
-                                            value="No">
+                                        <input class="form-check-input" type="radio" name="active" id="inputNo"
+                                               value="No">
                                         <label class="form-check-label" for="inputNo">No</label>
                                     </div>
                                 </div>
@@ -74,7 +78,7 @@
 
     {{-- Table --}}
     {{-- Uncomment the table below to and use its code --}}
-    
+
     {{-- <div class="row">
         <h2>Current Offers</h2>
         <table class="table">

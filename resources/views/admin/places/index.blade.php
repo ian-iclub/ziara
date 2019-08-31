@@ -10,20 +10,42 @@
     <div class="container">
         {{-- Button that toggles the form --}}
         <div class="row my-2">
-            <div class="col-md-2 col-lg-offset-10"><button type="submit" class="btn btn-primary btn-block toggler">New Location</button></div>
+
+            @isset($place)
+                <div class="col-md-2 col-lg-offset-9">
+                    <h4>You are currently editing </h4>
+                    <h3><b> {{ $place->title }} </b></h3>
+                </div>
+                <div class="col-md-1">
+                    <a href="{{ route('places.index') }}" class="btn btn-danger"> Cancel </a>
+                </div>
+            @else
+                <div class="col-md-2 col-lg-offset-10">
+                    <button type="submit" class="btn btn-primary btn-block toggler">New Location</button>
+                </div>
+            @endisset
+
         </div>
         {{-- Form --}}
-        <div class="row add-place toggle">
+        <div class="row add-place {{ isset($display_form) ? '' : 'toggle' }}">
             <div class="jumbotron">
                 <h3 class="">New Location Details</h3>
                 <hr class="my-4">
-                <form action="">
+                @isset($place)
+                    <form action="{{ route('places.update', ['id' => $place->id]) }}" method="post"
+                          enctype="multipart/form-data">
+                        <input type="hidden" name="_method" value="put"/>
+                        @else
+                            <form action="{{ route('places.create') }}" method="post" enctype="multipart/form-data">
+                                @endisset
+                                @csrf
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <div class="main-img-preview">
-                                    <img class="thumbnail img-preview" src="{{ asset('images/placeholder.png') }}"
-                                        title="Preview Logo">
+                                    <img class="thumbnail img-preview"
+                                         src="{{ isset($place) ? Storage::url($place->image_url) : asset('images/placeholder.png') }}"
+                                         title="Preview Logo">
                                 </div>
                                 <div class="input-group">
                                     <input id="fakeUploadLogo" class="form-control fake-shadow"
@@ -31,7 +53,8 @@
                                     <div class="input-group-btn">
                                         <div class="fileUpload btn btn-primary fake-shadow">
                                             <span><i class="glyphicon glyphicon-upload"></i> Upload Image</span>
-                                            <input id="logo-id" name="logo" type="file" class="attachment_upload">
+                                            <input id="logo-id" name="logo" type="file" class="attachment_upload"
+                                                {{ isset($place) ? null : 'required' }}>
                                         </div>
                                     </div>
                                 </div>
@@ -41,15 +64,15 @@
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label for="inputTitle">Title</label>
-                                <input type="text" class="form-control" id="inputTitle"
-                                    placeholder="Specific hotel/resort">
+                                <input type="text" class="form-control" id="inputTitle" name="title" required
+                                       placeholder="Specific hotel/resort" value="{{ $place->title ?? null }}">
                             </div>
                             <div class="form-group">
                                 <label for="inputLocation">Location</label>
-                                <input type="text" class="form-control" id="inputLocation"
-                                    placeholder="Location of hotel/resort">
+                                <input type="text" class="form-control" id="inputLocation" name="location" required
+                                       placeholder="Location of hotel/resort" value="{{ $place->location ?? null }}">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary float-right">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -73,11 +96,18 @@
                     @foreach($places as $place)
                     <tr>
                         <td>{{ $place['id'] }}</td>
-                        <td>{{ $place['image_url'] }}</td>
+                        <td><img src="{{ Storage::url($place['image_url']) }}" height="30"></td>
                         <td>{{ $place['title'] }}</td>
                         <td>{{ $place['location'] }}</td>
-                        <td><button type="submit" class="btn btn-warning">Update</button></td>
-                        <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                        <td><a href="{{ route('places.edit', ['id' => $place->id]) }}"
+                               class="btn btn-warning">Update</a></td>
+                        <td>
+                            <form action="{{ route('places.destroy', ['id' => $place->id]) }}" method="post">
+                                @csrf
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

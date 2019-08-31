@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Offer;
+use App\Place;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -16,8 +17,11 @@ class OfferController extends Controller
     public function index()
     {
         //
-        $offer = new Offer();
-        $offers = collect($offer->offers);
+        $places = Place::all();
+//        $offer = new Offer();
+//        $offers = collect($offer->offers);
+
+
 
         // foreach ($offers as $offer) {
         //     $offer = (object) $offer;
@@ -25,7 +29,7 @@ class OfferController extends Controller
         //     // return var_dump($offer->image);
         // }
         // return var_dump($offers);
-        return view('admin.offers.index', compact('offers'));
+        return view('admin.offers.index', compact('places', 'offers'));
 
 //        return response()->json($offers);
     }
@@ -101,8 +105,11 @@ class OfferController extends Controller
     {
 //        $offers = Offer::all();
 
-        $offer = new Offer();
-        $offers = collect($offer->offers);
+//        $offer = new Offer();
+//        $offers = collect($offer->offers);
+
+        $offers = Place::has('activeOffers')->with('activeOffers')->get();
+
         return view('index', compact('offers'));
     }
 }

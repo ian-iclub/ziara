@@ -6,6 +6,7 @@ use App\Place;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Throwable;
 
 class PlaceController extends Controller
 {
@@ -44,18 +45,38 @@ class PlaceController extends Controller
     public function store(Request $request)
     {
         //
-        if ($place = Place::create($request->all())) {
+        $path = "";
 
-            if ($request->hasFile('image')) {
-                $path = Storage::putFile('uploads/places', $request->file('image'));
+        if ($request->hasFile('logo')) {
+            $path = Storage::putFile('uploads/places', $request->file('logo'));
 
 //                self::success('Document of ' . $request->input('name') . ' created successfully');
-            }
-
-//            self::success('Visitor ' . $request->input('name') . ' created successfully');
-        } else {
-//            self::warning('Visitor ' . $request->input('name') . ' could not be created');
         }
+
+//        return $path;
+
+        $place = new Place();
+        $place->image_url = $path;
+        $place->title = $request->get('title');
+        $place->location = $request->get('location');
+
+        try {
+            $place = $place->saveOrFail();
+
+//            return \response()->json($place);
+
+        } catch (Throwable $e) {
+//            return \response()->json($e);
+        }
+
+//        if ($place = Place::create($place)) {
+//
+//
+//
+////            self::success('Visitor ' . $request->input('name') . ' created successfully');
+//        } else {
+////            self::warning('Visitor ' . $request->input('name') . ' could not be created');
+//        }
 
         return redirect()->route('admin');
 
@@ -82,6 +103,13 @@ class PlaceController extends Controller
     public function edit(Place $place)
     {
         //
+        $places = Place::with('activeOffers')->get();
+
+//        return response()->json($places);
+        $display_form = true;
+
+        return view('admin.places.index', compact('places', 'place', 'display_form'));
+
     }
 
     /**
@@ -94,6 +122,27 @@ class PlaceController extends Controller
     public function update(Request $request, Place $place)
     {
         //
+
+
+        if ($request->hasFile('logo')) {
+            $path = Storage::putFile('uploads/places', $request->file('logo'));
+
+//                self::success('Document of ' . $request->input('name') . ' created successfully');
+
+            $place->image_url = $path;
+        }
+
+        $place->title = $request->get('title');
+        $place->location = $request->get('location');
+
+        if ($place->save()) {
+
+            return redirect()->route('places.index');
+//            self::success('Visitor ' . $visitor->name . ' has been updated.');
+        }
+
+        return \response()->json(["updated" => false]);
+//        return redirect()->route('places.index');
     }
 
     /**
@@ -105,5 +154,7 @@ class PlaceController extends Controller
     public function destroy(Place $place)
     {
         //
+        return redirect()->route('places.index');
+//        return \response()->json(["destroyed" => true]);
     }
 }

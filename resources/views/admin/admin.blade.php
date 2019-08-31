@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
         {{--        <div class="row">--}}
         {{--            <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">--}}
         {{--                <h2>Our Offers  </h2>--}}
@@ -18,11 +18,13 @@
         {{--        </div>--}}
         <div class="row">
             <div class="col-md-12 animate-box">
+
                 @forelse($offers as $offer)
-                <div class="owl-carousel">
+                    <div class="owl-carousel">
                         <div class="item">
                             <div class="hotel-entry">
-                                <a class="hotel-img" style="background-image: url({{ $offer['image_url'] }});">
+                                <a class="hotel-img"
+                                   style="background-image: url({{ Storage::url($offer['image_url']) }});">
                                     <p class="price"><span>{{ $offer['title'] }}</span><small></small></p>
                                 </a>
                                 <div class="desc">
@@ -39,10 +41,11 @@
                                 </div>
                             </div>
                         </div>
-                    @empty
-                        <p>No offers currently recorded</p>
-                    @endforelse
-                </div>
+                    </div>
+
+                @empty
+                    <p>No offers available at the moment. <br>Please add some to view how the will be displayed.</p>
+                @endforelse
             </div>
         </div>
     </div>

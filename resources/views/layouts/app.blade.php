@@ -59,7 +59,32 @@
 </head>
 <body>
 
-    <div id="app">
+<style>
+
+    body {
+        font-size: 14px;
+    }
+
+    .navbar-laravel {
+        background-color: #E4A300;
+    }
+
+    .navbar-brand {
+        float: left;
+        padding: 17.5px 15px;
+        font-size: 18px;
+        line-height: 20px;
+        height: 55px;
+    }
+
+    .nav-link, .dropdown-menu {
+        font-size: 14px;
+    }
+
+</style>
+
+
+<div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

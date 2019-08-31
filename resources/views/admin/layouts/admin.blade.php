@@ -24,6 +24,10 @@
         .nav-link, .dropdown-menu {
             font-size: 14px;
         }
+
+        .btn {
+            font-size: 14px;
+        }
     </style>
 
 @stop

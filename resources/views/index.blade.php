@@ -57,30 +57,33 @@
         </div>
         <div class="row">
             <div class="col-md-12 animate-box">
-                <div class="owl-carousel">
-                        @forelse($offers as $offer)
+                @forelse($offers as $offer)
+                    <div class="owl-carousel">
                         <div class="item">
                             <div class="hotel-entry">
-                                <a class="hotel-img" style="background-image: url({{ $offer['image'] }});">
-                                    <p class="price"><span>{{ $offer['period'] }}</span><small></small></p>
+                                <a class="hotel-img"
+                                   style="background-image: url({{ Storage::url($offer['image_url']) }});">
+                                    <p class="price"><span>{{ $offer['title'] }}</span><small></small></p>
                                 </a>
                                 <div class="desc">
                                     <h3><a href="#">{{ $offer['title'] }}</a></h3>
                                     <span class="place">{{ $offer['location'] }}</span>
-                                    {{-- <p>{{ $offer['desc'] }}</p> --}}
+                                    {{--                                <p>{{ $offer['active_offers'] }}</p>--}}
                                     <p>
-                                            @foreach($offer['desc'] as $type)
-                                            <h4 class="desc-price">{{$type['currency'] . ' ' . number_format($type['price'], 0)}}</h4>
-                                            <p class="desc-content">{{$type['content']}}</p>
-                                            @endforeach
-                                    </p>
+                                    {{--                                    {{ $offer['activeOffers'] }}--}}
+                                    @foreach($offer['activeOffers'] as $type)
+                                        <h4 class="desc-price">{{$type['currency'] . ' ' . number_format($type['price'], 0)}}</h4>
+                                        <p class="desc-content">{{$type['details']}}</p>
+                                        @endforeach
+                                        </p>
                                 </div>
                             </div>
                         </div>
-                        @empty
-                            <p>No offers</p>
-                        @endforelse
-                </div>
+                    </div>
+
+                @empty
+                    <p>No offers available at the moment. <br>Please check back later...</p>
+                @endforelse
             </div>
         </div>
     </div>
