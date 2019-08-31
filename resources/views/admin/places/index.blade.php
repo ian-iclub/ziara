@@ -36,7 +36,7 @@
                           enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="put"/>
                         @else
-                            <form action="{{ route('places.create') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('places.store') }}" method="post" enctype="multipart/form-data">
                                 @endisset
                                 @csrf
                     <div class="row">
@@ -89,7 +89,6 @@
                         <th scope="col">Title</th>
                         <th scope="col">Location</th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,14 +98,23 @@
                         <td><img src="{{ Storage::url($place['image_url']) }}" height="30"></td>
                         <td>{{ $place['title'] }}</td>
                         <td>{{ $place['location'] }}</td>
-                        <td><a href="{{ route('places.edit', ['id' => $place->id]) }}"
-                               class="btn btn-warning">Update</a></td>
                         <td>
-                            <form action="{{ route('places.destroy', ['id' => $place->id]) }}" method="post">
-                                @csrf
-                                <input type="hidden" name="_method" value="delete"/>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                            <a href="{{ route('places.edit', ['id' => $place->id]) }}"
+                               class="btn btn-warning float-left">Update</a>
+
+                            @if($place->offers_count == 0)
+                                <form action="{{ route('places.destroy', ['id' => $place->id]) }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="delete"/>
+                                    <button type="submit" class="btn btn-danger float-left">Delete</button>
+                                </form>
+                            @else
+                                <button type="submit" class="btn btn-danger" disabled
+                                        title="Delete offers belonging to this place first...">Delete
+                                </button>
+                                <a href="{{ route('offers.index', ['place_id' => $place->id]) }}"
+                                   class="btn btn-secondary">Offers</a>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

@@ -209,7 +209,12 @@ class Offer extends Model
      * @var array
      */
     protected $fillable = [
-        'period', 'details', 'price', 'currency', 'active',
+        'place_id', 'period', 'details', 'price', 'currency', 'active',
     ];
+
+    public function place()
+    {
+        return $this->belongsTo('App\Place');
+    }
 
 }

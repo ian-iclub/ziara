@@ -22,6 +22,6 @@ class Place extends Model
 
     public function activeOffers()
     {
-        return $this->hasMany('App\Offer')->where('offers.active', true);
+        return $this->hasMany('App\Offer')->where('active', true);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddOffersForeignKeysTable extends Migration
 {
@@ -16,8 +16,8 @@ class AddOffersForeignKeysTable extends Migration
         //
         Schema::table('offers', function (Blueprint $table) {
             $table->unsignedBigInteger('place_id');
-        
-            $table->foreign('place_id')->references('id')->on('places');
+
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('CASCADE');
         });
     }
 

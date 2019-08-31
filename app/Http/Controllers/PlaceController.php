@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Place;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,7 @@ class PlaceController extends Controller
     public function index()
     {
         //
-        $places = Place::with('activeOffers')->get();
+        $places = Place::withCount('offers')->get();
 
 //        return response()->json($places);
 
@@ -103,7 +104,7 @@ class PlaceController extends Controller
     public function edit(Place $place)
     {
         //
-        $places = Place::with('activeOffers')->get();
+        $places = Place::withCount('offers')->get();
 
 //        return response()->json($places);
         $display_form = true;
@@ -154,6 +155,11 @@ class PlaceController extends Controller
     public function destroy(Place $place)
     {
         //
+        try {
+            $place->delete();
+        } catch (Exception $e) {
+
+        }
         return redirect()->route('places.index');
 //        return \response()->json(["destroyed" => true]);
     }

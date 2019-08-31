@@ -6,6 +6,7 @@ use App\Offer;
 use App\Place;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Throwable;
 
 class OfferController extends Controller
 {
@@ -14,21 +15,26 @@ class OfferController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $places = Place::all();
-//        $offer = new Offer();
-//        $offers = collect($offer->offers);
 
+        if ($request->has('place_id')) {
+            $place = $request->input('place_id');
 
+            $offers = Offer::where('place_id', $place)->get();
 
-        // foreach ($offers as $offer) {
-        //     $offer = (object) $offer;
+            $offer_place = Place::where('id', $place)->get();
 
-        //     // return var_dump($offer->image);
-        // }
-        // return var_dump($offers);
+            return view('admin.offers.index', compact('places', 'offers', 'offer_place'));
+
+        } else {
+            $offers = Offer::with('place')->get();
+
+            return view('admin.offers.index', compact('places', 'offers'));
+        }
+
         return view('admin.offers.index', compact('places', 'offers'));
 
 //        return response()->json($offers);
@@ -53,7 +59,12 @@ class OfferController extends Controller
     public function store(Request $request)
     {
         //
+
+//        return $request;
+
         $offer = Offer::create($request->all());
+
+        return redirect()->route('offers.index');
     }
 
     /**
@@ -76,6 +87,14 @@ class OfferController extends Controller
     public function edit(offer $offer)
     {
         //
+        $places = Place::all();
+
+        $offers = Offer::with('place')->get();
+
+        $display_form = true;
+
+//        return $offer;
+        return view('admin.offers.index', compact('places', 'offers', 'offer', 'display_form'));
     }
 
     /**
@@ -88,6 +107,17 @@ class OfferController extends Controller
     public function update(Request $request, offer $offer)
     {
         //
+
+        try {
+            $offer->update($request->all());
+
+            return redirect()->route('offers.index');
+
+        } catch (Throwable $e) {
+
+            return $e;
+        }
+
     }
 
     /**
@@ -111,5 +141,17 @@ class OfferController extends Controller
         $offers = Place::has('activeOffers')->with('activeOffers')->get();
 
         return view('index', compact('offers'));
+    }
+
+    public function activate(Request $request)
+    {
+
+        $offer = Offer::where('id', $request->id)->first();
+
+        $offer->active = !$offer->active;
+
+        $offer->save();
+
+        return redirect()->route('offers.index');
     }
 }

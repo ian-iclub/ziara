@@ -72,5 +72,7 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('places', 'PlaceController');
     Route::resource('offers', 'OfferController');
+
+    Route::post('offers/activate', 'OfferController@activate')->name('offers.activate');
 });
 
