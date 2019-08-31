@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Offer;
 use App\Place;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Throwable;
@@ -129,6 +130,11 @@ class OfferController extends Controller
     public function destroy(offer $offer)
     {
         //
+        try {
+            $offer->delete();
+        } catch (Exception $e) {
+        }
+        return redirect()->route('offers.index');
     }
 
     public function frontendOffers()
