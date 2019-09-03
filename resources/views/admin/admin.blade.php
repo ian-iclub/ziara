@@ -24,7 +24,8 @@
                             <div class="hotel-entry">
                                 <a class="hotel-img"
                                    style="background-image: url({{ Storage::url($offer['image_url']) }});">
-                                    <p class="price"><span>{{ $offer['title'] }}</span><small></small></p>
+                                    <p class="price"><span>{{ $offer->activeOffers[0]->period }}</span><small></small>
+                                    </p>
                                 </a>
                                 <div class="desc">
                                     <h3><a href="#">{{ $offer['title'] }}</a></h3>
