@@ -108,6 +108,7 @@
     {{-- Uncomment the table below to and use its code --}}
 
     <div class="row">
+            @forelse($offers as $offer)
         <h2>Current Offers {{ isset($offer_place) ? 'of '.$offer_place[0]['title'] : '' }}</h2>
         <table class="table">
             <thead class="thead-dark">
@@ -123,7 +124,7 @@
                 </tr>
             </thead>
             <tbody>
-            @forelse($offers as $offer)
+
                 <tr>
                     <td>{{ $offer['place']->title }}</td>
                     <td>{{ $offer['period'] }}</td>
@@ -151,11 +152,11 @@
                         </form>
                     </td>
                 </tr>
-            @empty
-                <p>No offers available at the moment.</p>
-            @endforelse
             </tbody>
         </table>
+        @empty
+            <h4>No offers available at the moment.</h4>
+        @endforelse
     </div>
 </div>
 
