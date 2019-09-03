@@ -147,7 +147,7 @@ class OfferController extends Controller
         $offers = Place::has('activeOffers')->with('activeOffers')->get();
 
 //        TODO: Fix period of offers displayed
-        $offers->period = $offers[0]->offers[0]->period;
+//        $offers->period = $offers[0]->offers[0]->period;
 
         return view('index', compact('offers'));
     }
