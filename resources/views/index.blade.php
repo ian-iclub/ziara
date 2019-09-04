@@ -62,7 +62,7 @@
                         <div class="item">
                             <div class="hotel-entry">
                                 <a class="hotel-img"
-                                   style="background-image: url({{ Storage::url($offer['image_url']) }});">
+                                   style="background-image: url({{ Storage::url($offer['image_url']) }}), url({{ asset('images/sunlogo.png') }});">
                                     <p class="price"><span>{{ $offer->period }}</span><small></small>
                                     </p>
                                 </a>

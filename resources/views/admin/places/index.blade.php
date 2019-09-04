@@ -45,7 +45,8 @@
                                 <div class="main-img-preview">
                                     <img class="thumbnail img-preview"
                                          src="{{ isset($place) ? Storage::url($place->image_url) : asset('images/placeholder.png') }}"
-                                         title="Preview Logo">
+                                         title="Preview Logo"
+                                         onerror="this.onerror=null;this.src='{{ asset('images/placeholder.png') }}';">
                                 </div>
                                 <div class="input-group">
                                     <input id="fakeUploadLogo" class="form-control fake-shadow"
@@ -95,7 +96,8 @@
                     @foreach($places as $place)
                     <tr>
                         <td>{{ $place['id'] }}</td>
-                        <td><img src="{{ Storage::url($place['image_url']) }}" height="30"></td>
+                        <td><img src="{{ Storage::url($place['image_url']) }}" height="30"
+                                 onerror="this.onerror=null;this.src='{{ asset('images/sunlogo.png') }}';"></td>
                         <td>{{ $place['title'] }}</td>
                         <td>{{ $place['location'] }}</td>
                         <td>
