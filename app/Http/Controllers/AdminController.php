@@ -25,12 +25,18 @@ class AdminController extends Controller
      */
     public function index()
     {
-//        $offer = new Offer();
-//        $offers = collect($offer->offers);
-
-        // var_dump($offers);
-
         $offers = Place::has('activeOffers')->with('activeOffers')->get();
+
+        foreach ($offers as $offer) {
+            collect($offer);
+
+//            array_push($period, $offer->activeOffers->pluck('period'));
+
+//            $offer['period'] = array_unique(array_flatten($period));
+
+            $offer['period'] = implode('/', array_unique($offer->activeOffers->pluck('period')->toArray()));
+
+        }
 
         return view('admin.admin', compact('offers'));
     }
