@@ -123,7 +123,7 @@
                 </tr>
             </thead>
             <tbody>
-            @forelse($offers as $offer)
+                @forelse($offers as $offer)
                 <tr>
                     <td>{{ $offer['place']->title }}</td>
                     <td>{{ $offer['period'] }}</td>
@@ -151,9 +151,9 @@
                         </form>
                     </td>
                 </tr>
-            @empty
-                <p>No offers available at the moment.</p>
-            @endforelse
+                @empty
+            <h4>No offers available at the moment.</h4>
+        @endforelse
             </tbody>
         </table>
     </div>

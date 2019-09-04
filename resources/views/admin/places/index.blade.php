@@ -49,9 +49,9 @@
                                 </div>
                                 <div class="input-group">
                                     <input id="fakeUploadLogo" class="form-control fake-shadow"
-                                        placeholder="Choose File" disabled="disabled">
-                                    <div class="input-group-btn">
-                                        <div class="fileUpload btn btn-primary fake-shadow">
+                                        placeholder="Choose File" disabled="disabled" style="display:none">
+                                    <div class="input-group-btn col-md-12">
+                                        <div class="fileUpload btn btn-primary fake-shadow" style="width:100%">
                                             <span><i class="glyphicon glyphicon-upload"></i> Upload Image</span>
                                             <input id="logo-id" name="logo" type="file" class="attachment_upload"
                                                 {{ isset($place) ? null : 'required' }}>

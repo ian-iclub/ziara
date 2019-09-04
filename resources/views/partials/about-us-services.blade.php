@@ -52,7 +52,7 @@
                     <p style="text-align: justify;">We book flights locally and internationally. We advise on visa and health
                         requirements for all countries and organize visa services where possible.
                         We organize airport transfers, hotel bookings, tours and safaris for all
-                        over the world. We organize camps, team buildong activities, conferences, holiday
+                        over the world. We organize camps, team building activities, conferences, holiday
                         packages, package to Egypt and Israel, Meet and assist services.</p>
                 </div>
             </div>

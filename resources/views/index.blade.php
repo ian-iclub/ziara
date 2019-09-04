@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     @empty
-                        <p>No offers available at the moment. <br>Please check back later.</p>
+                        <h4 style="text-align: center">No offers available at the moment. <br>Please check back later.</h4>
                     @endforelse
                 </div>
             </div>

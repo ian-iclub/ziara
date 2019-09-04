@@ -79,7 +79,7 @@ class PlaceController extends Controller
 ////            self::warning('Visitor ' . $request->input('name') . ' could not be created');
 //        }
 
-        return redirect()->route('admin');
+        return redirect()->route('places.index');
 
     }
 

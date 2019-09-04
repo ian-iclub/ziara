@@ -16,7 +16,7 @@ class CreateOffersTable extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('period');
-            $table->string('details');
+            $table->text('details');
             $table->double('price', 8, 2);
             $table->enum('currency', ['KES', 'USD']);
             $table->boolean('active');
