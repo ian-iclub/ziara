@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Offer;
 use App\Place;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -49,5 +50,14 @@ class AdminController extends Controller
     public function offers()
     {
         return Offer::all();
+    }
+
+    public function editMessages(Request $request)
+    {
+
+        config(['settings.offer_type' => $request->type]);
+        config(['settings.offer_message' => $request->message]);
+
+        return redirect()->route('admin');
     }
 }

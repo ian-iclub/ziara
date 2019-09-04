@@ -7,15 +7,15 @@
                 {{ session('status') }}
             </div>
         @endif
-        {{--        <div class="row">--}}
-        {{--            <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">--}}
-        {{--                <h2>Our Offers  </h2>--}}
-        {{--                 <p>Enjoy our exclusive offers</p>--}}
-        {{--                <h2 style="font-size:30px;color: #E4A300;">Early Bird Offers!</h2>--}}
-        {{--                <small>Bookings should be completed by end of April for the rates to be valid.</small>--}}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">
+                {{--                        <h2>Our Offers  </h2>--}}
+                {{--                         <p>Enjoy our exclusive offers</p>--}}
+                <h2 style="font-size:30px;color: #E4A300;">{{ config('settings.offer_type') }}</h2>
+                <small>{{ config('settings.offer_message') }}</small>
 
-        {{--            </div>--}}
-        {{--        </div>--}}
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12 animate-box">
                     @forelse($offers as $offer)
