@@ -9,7 +9,10 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="row">
+
+        {{-- Find below the added fields --}}
+        
+        {{-- <div class="row">
             <div class="col-md-2 col-lg-offset-10">
                 <button type="submit" class="btn btn-primary btn-block toggler">Edit Offer Header</button>
             </div>
@@ -31,7 +34,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
 
         <div class="row">
             <div class="col-md-12 animate-box">
