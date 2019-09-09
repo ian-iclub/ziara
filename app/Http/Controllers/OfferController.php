@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Offer;
 use App\Place;
+use App\Settings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -139,25 +140,17 @@ class OfferController extends Controller
 
     public function frontendOffers()
     {
-//        $offers = Offer::all();
-
-//        $offer = new Offer();
-//        $offers = collect($offer->offers);
-
         $offers = Place::has('activeOffers')->with('activeOffers')->get();
 
         foreach ($offers as $offer) {
             collect($offer);
 
-//            array_push($period, $offer->activeOffers->pluck('period'));
-
-//            $offer['period'] = array_unique(array_flatten($period));
-
             $offer['period'] = implode('/', array_unique($offer->activeOffers->pluck('period')->toArray()));
-
         }
 
-        return view('index', compact('offers'));
+        $settings = Settings::all()->first();
+
+        return view('index', compact('offers', 'settings'));
     }
 
     public function activate(Request $request)

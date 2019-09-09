@@ -75,6 +75,6 @@ Route::prefix('admin')->group(function () {
 
     Route::post('offers/activate', 'OfferController@activate')->name('offers.activate');
 
-    Route::post('offers_display/update', "AdminController@editMessages")->name('offers_display.edit');
+    Route::post('offers_display/update', "SettingsController@update")->name('offers_display.edit');
 });
 

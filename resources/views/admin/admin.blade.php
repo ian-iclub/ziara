@@ -39,16 +39,17 @@
                 <hr class="my-4">
                 <form method="post" action="{{ route('offers_display.edit') }}">
                     @csrf
+                    <input type="hidden" name="id" value="{{ $settings['id'] }}">
                     <div class="form-group">
                         <label for="inputType">Primary Header</label>
-                        <input type="text" class="form-control" id="inputType" name="type" required
-                               placeholder="E.g Easter offers" value="{{ config('settings.offer_type') }}">
+                        <input type="text" class="form-control" id="inputType" name="offer_type" required
+                               placeholder="E.g Easter offers" value="{{ $settings['offer_type'] ?? null }}">
                     </div>
                     <div class="form-group">
                         <label for="inputMessage">Secondary Header</label>
-                        <input type="text" class="form-control" id="inputMessage" name="message" required
+                        <input type="text" class="form-control" id="inputMessage" name="offer_message" required
                                placeholder="E.g. Offers valid until end of May"
-                               value="{{ config('settings.offer_message') }}">
+                               value="{{ $settings['offer_message'] ?? null }}">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>

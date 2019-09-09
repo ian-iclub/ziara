@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Offer;
 use App\Place;
+use App\Settings;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,9 @@ class AdminController extends Controller
 
         }
 
-        return view('admin.admin', compact('offers'));
+        $settings = Settings::all()->first();
+
+        return view('admin.admin', compact('offers', 'settings'));
     }
 
     public function places()
