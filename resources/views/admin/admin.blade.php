@@ -1,5 +1,7 @@
 @extends('admin.layouts.admin')
 
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 @section('content')
     <div class="container">
         @if (session('status'))
@@ -7,15 +9,33 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">
-                {{--                        <h2>Our Offers  </h2>--}}
-                {{--                         <p>Enjoy our exclusive offers</p>--}}
-                <h2 style="font-size:30px;color: #E4A300;">{{ config('settings.offer_type') }}</h2>
-                <small>{{ config('settings.offer_message') }}</small>
 
+        {{-- Find below the added fields --}}
+
+        {{-- <div class="row">
+            <div class="col-md-2 col-lg-offset-10">
+                <button type="submit" class="btn btn-primary btn-block toggler">Edit Offer Header</button>
             </div>
         </div>
+        <div class="row add-header toggle">
+            <div class="jumbotron col-md-12">
+                <h3 class="">Offer Headers</h3>
+                <hr class="my-4">
+                <form action="">
+                    <div class="form-group">
+                        <label for="inputTitle">Primary Header</label>
+                        <input type="text" class="form-control" id="inputTitle" name="title" required
+                            placeholder="E.g Easter offers" value="{{ $place->title ?? null }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTitle">Secondary Header</label>
+                        <input type="text" class="form-control" id="inputTitle" name="title" required
+                            placeholder="E.g. Offers valid until end of May" value="{{ $place->title ?? null }}">
+                    </div>
+                </form>
+            </div>
+        </div> --}}
+
         <div class="row">
             <div class="col-md-12 animate-box">
                     @forelse($offers as $offer)
@@ -53,14 +73,20 @@
     </div>
     {{-- </div> --}}
 @endsection
-
-{{--@section('adminlte_css')--}}
-{{--    <style>--}}
-{{--    .admin-home--}}
-{{--    {--}}
-{{--        /* height: 100vh; */--}}
-{{--    }--}}
-
-{{--    </style>--}}
-{{--@stop--}}
+<style>
+     .toggle {
+         display: none;
+     }
+</style>
+<script>
+    $('.toggler').on('click', function (event) {
+        if ($('.add-header').hasClass('toggle') == false) {
+            $('.add-header').addClass('toggle');
+            $(this).text('Edit Offer Header');
+        } else {
+            $('.add-header').removeClass('toggle');
+            $(this).text('Close');
+        }
+    });
+</script>
 
