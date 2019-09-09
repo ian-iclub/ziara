@@ -30,7 +30,11 @@
         }
     </style>
 
+    @yield('css')
+
 @stop
+
+@section('body')
 
 <div class="joc-loader"></div>
 
@@ -99,7 +103,6 @@
         </div>
     </nav>
 
-    @section('body')
         @if(Session::has('success'))
             <div class="alert alert-dismissable alert-success fade in"
                  style="position:absolute;top:2%;right:50px;z-index:99;position:fixed">
@@ -130,6 +133,12 @@
             <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
         </div>
 
-    @stop
+
 
 </div>
+
+@stop
+
+@section('js')
+    @yield('js')
+@stop
