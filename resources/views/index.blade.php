@@ -50,8 +50,8 @@
             <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">
                 <h2>Our Offers</h2>
                 {{-- <p>Enjoy our exclusive offers</p> --}}
-                <h2 style="font-size:30px;color: #E4A300;">Early Bird Offers!</h2>
-                <small>Bookings should be completed by end of April for the rates to be valid.</small>
+                <h2 style="font-size:30px;color: #E4A300;">{{ $settings['offer_type'] ?? null }}</h2>
+                <small>{{ $settings['offer_message'] ?? null }}</small>
 
             </div>
         </div>
