@@ -59,7 +59,8 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <p>Copyright &copy;<script> document.write(new Date().getFullYear());</script>
-                    . All rights reserved<span class="joc-footer-brand"> | Design by <a href="#JoC"> Jack o' Clubs </a></span>
+                    . All rights reserved<span class="joc-footer-brand"> | Design by <a
+                            href="https://jackofclubs.co.ke"> Jack o' Clubs </a></span>
                 </p>
             </div>
         </div>
