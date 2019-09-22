@@ -52,7 +52,19 @@
                             {{-- <input type="text" class="form-control" id="inputPeriod" name="period" required
                                    placeholder="E.g. August, November ..." value="{{ $offer->period ?? null }}"> --}}
                                    <select class="form-control" id="inputPeriod" name="period" required>
-                                       <option value="{{ $offer->period ?? null }}">{{ $offer->period ?? null }}</option>
+                                       <option value="{{ $offer->period ?? null }}" selected style="color:black;background-color:#E4A300">{{ $offer->period ?? null }}</option>
+                                       <option value="January">January</option>
+                                       <option value="February">February</option>
+                                       <option value="March">March</option>
+                                       <option value="April">April</option>
+                                       <option value="May">May</option>
+                                       <option value="June">June</option>
+                                       <option value="July">July</option>
+                                       <option value="August">August</option>
+                                       <option value="September">September</option>
+                                       <option value="October">October</option>
+                                       <option value="November">November</option>
+                                       <option value="December">December</option>
                                    </select>
                         </div>
                         <div class="form-group">
