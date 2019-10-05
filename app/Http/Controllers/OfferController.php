@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Offer;
 use App\Place;
 use App\Settings;
+use App\Slider;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -142,6 +143,8 @@ class OfferController extends Controller
     {
         $offers = Place::has('activeOffers')->with('activeOffers')->get();
 
+        $slider = Slider::all()->first();
+
         foreach ($offers as $offer) {
             collect($offer);
 
@@ -150,7 +153,7 @@ class OfferController extends Controller
 
         $settings = Settings::all()->first();
 
-        return view('index', compact('offers', 'settings'));
+        return view('index', compact('slider', 'offers', 'settings'));
     }
 
     public function activate(Request $request)

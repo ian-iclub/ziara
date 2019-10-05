@@ -78,6 +78,12 @@ Route::prefix('admin')->group(function () {
     Route::resource('places', 'PlaceController');
     Route::resource('offers', 'OfferController');
 
+    Route::get('sliders', 'AdminController@sliderIndex')->name('sliders.index');
+    Route::post('sliders', 'AdminController@sliderStore')->name('sliders.store');
+    Route::get('sliders/{slider}/edit', 'AdminController@sliderEdit')->name('sliders.edit');
+    Route::put('sliders/{slider}', 'AdminController@sliderUpdate')->name('sliders.update');
+    Route::delete('sliders/{slider}', 'AdminController@sliderDestroy')->name('sliders.destroy');
+
     Route::post('offers/activate', 'OfferController@activate')->name('offers.activate');
 
     Route::post('offers_display/update', "SettingsController@update")->name('offers_display.edit');

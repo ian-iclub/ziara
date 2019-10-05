@@ -55,6 +55,9 @@
                 <ul class="navbar-nav ml-2 mr-auto">
                     @auth
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('sliders.index') }}">{{ __('Sliders') }}</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('places.index') }}">{{ __('Places') }}</a>
                         </li>
                         <li class="nav-item">

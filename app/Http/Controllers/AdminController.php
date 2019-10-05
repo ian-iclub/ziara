@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use App\Offer;
 use App\Place;
 use App\Settings;
+use App\Slider;
+use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Throwable;
+use function response;
 
 class AdminController extends Controller
 {
@@ -53,6 +58,86 @@ class AdminController extends Controller
     public function offers()
     {
         return Offer::all();
+    }
+
+    public function sliderIndex()
+    {
+        $sliders = Slider::all();
+
+        return view('admin.sliders.index', compact('sliders'));
+    }
+
+    public function sliderEdit(Slider $slider)
+    {
+        $sliders = Slider::all();
+
+        $display_form = true;
+
+        return view('admin.sliders.index', compact('slider', 'sliders', 'display_form'));
+    }
+
+    public function sliderStore(Request $request)
+    {
+        $path = "";
+
+        if ($request->hasFile('logo')) {
+            $path = Storage::putFile('uploads/sliders', $request->file('logo'));
+
+//                self::success('Document of ' . $request->input('name') . ' created successfully');
+        }
+
+//        return $path;
+
+        $slider = new Slider();
+        $slider->image_url = $path;
+        $slider->title = $request->get('title');
+        $slider->message = $request->get('message');
+
+        try {
+            $slider = $slider->saveOrFail();
+
+//            return \response()->json($place);
+
+        } catch (Throwable $e) {
+//            return \response()->json($e);
+        }
+
+        return redirect()->route('sliders.index');
+    }
+
+    public function sliderUpdate(Request $request, Slider $slider)
+    {
+
+        if ($request->hasFile('logo')) {
+            $path = Storage::putFile('uploads/sliders', $request->file('logo'));
+
+//                self::success('Document of ' . $request->input('name') . ' created successfully');
+
+            $slider->image_url = $path;
+        }
+
+        $slider->title = $request->get('title');
+        $slider->message = $request->get('message');
+
+        if ($slider->save()) {
+
+            return redirect()->route('sliders.index');
+//            self::success('Visitor ' . $visitor->name . ' has been updated.');
+        }
+
+        return response()->json(["updated" => false]);
+    }
+
+    public function sliderDestroy(Slider $slider)
+    {
+        //
+        try {
+            $slider->delete();
+        } catch (Exception $e) {
+        }
+
+        return redirect()->route('sliders.index');
+//        return \response()->json(["destroyed" => true]);
     }
 
     public function editMessages(Request $request)
