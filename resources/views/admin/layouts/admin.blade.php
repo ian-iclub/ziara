@@ -66,6 +66,9 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav mr-2 ml-auto" style="float: right;">
                     <!-- Authentication Links -->
+                    {{-- <li class="nav-item mr-5">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li> --}}
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -81,10 +84,10 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-
                             <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('home') }}"> Visit site</a>
-                                {{-- <hr> --}}
+                                <a class="dropdown-item" href="{{route('users')}}">Manage Users</a>
+                                <hr>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

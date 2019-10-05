@@ -1,3 +1,1 @@
-1. Get 'email sent response'
-2. Fix Date on mail
-3. Contact us receipient
+1. admin/layouts/admin.blade - Fix Url line 69

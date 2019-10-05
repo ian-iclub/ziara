@@ -19,10 +19,10 @@
         @endif
         {{--            <div class="row">--}}
         {{--                <div class="col-md-6 col-md-offset-3 text-center joc-heading animate-box">--}}
-        {{--                    --}}{{--                        <h2>Our Offers  </h2>--}}
+        {{--                    --}}{{--                        <h2>'Our Offers  </h2>--}}
         {{--                    --}}{{--                         <p>Enjoy our exclusive offers</p>--}}
         {{--                    <h2 style="font-size:30px;color: #E4A300;">{{ config('settings.offer_type') }}</h2>--}}
-        {{--                    <small>{{ config('settings.offer_message') }}</small>--}}
+        {{--                    <small>{{ config('settin`gs.offer_message') }}</small>--}}
 
         {{--                </div>--}}
         {{--            </div>--}}
@@ -42,7 +42,8 @@
                     <input type="hidden" name="id" value="{{ $settings['id'] }}">
                     <div class="form-group">
                         <label for="inputType">Primary Header</label>
-                        <input type="text" class="form-control" id="inputType" name="offer_type" required
+                        <input type="text" class="form-
+                        ontrol" id="inputType" name="offer_type" required
                                placeholder="E.g Easter offers" value="{{ $settings['offer_type'] ?? null }}">
                     </div>
                     <div class="form-group">
@@ -60,8 +61,9 @@
 
         <div class="row">
             <div class="col-md-12 animate-box">
-                    @forelse($offers as $offer)
+
                 <div class="owl-carousel">
+                        @forelse($offers as $offer)
                         <div class="item">
                             <div class="hotel-entry">
                                 <a class="hotel-img"

@@ -51,6 +51,11 @@ Route::get('/contact-us', function () {
     return view('contact-us');
 })->name('contact');
 
+// Testing URL
+Route::get('/users', function () {
+    return view('admin/users/users');
+})->name('users');
+
 
 Route::post('/contact-us', 'MailController@contactUs');
 
