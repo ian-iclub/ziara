@@ -62,12 +62,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputLocation">Password</label>
-                                    <input type="text" class="form-control" id="inputLocation" name="password" required
+                                    <input type="password" class="form-control" id="inputLocation" name="password" required
                                         placeholder="Enter Password">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputLocation">Confirm Password</label>
-                                    <input type="text" class="form-control" id="password-confirm"
+                                    <input type="password" class="form-control" id="password-confirm"
                                         name="password_confirmation" required placeholder="Enter Password">
                                 </div>
                                 @if ($errors->any())

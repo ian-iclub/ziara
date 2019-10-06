@@ -49,9 +49,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputPeriod">Period</label>
-                                {{-- <input type="text" class="form-control" id="inputPeriod" name="period" required
-                                   placeholder="E.g. August, November ..." value="{{ $offer->period ?? null }}"> --}}
-                                <select class="form-control" id="inputPeriod" name="period" required>
+                                <input type="text" class="form-control" id="inputPeriod" name="period" required
+                                   placeholder="E.g. August, November ..." value="{{ $offer->period ?? null }}">
+                                {{-- <select class="form-control" id="inputPeriod" name="period" required>
                                     <option value="{{ $offer->period ?? null }}" selected
                                         style="color:black;background-color:#E4A300">{{ $offer->period ?? null }}
                                     </option>
@@ -67,7 +67,7 @@
                                     <option value="October">October</option>
                                     <option value="November">November</option>
                                     <option value="December">December</option>
-                                </select>
+                                </select> --}}
                             </div>
                             <div class="form-group">
                                 <label for="inputDetails">Details</label>
