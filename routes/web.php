@@ -52,9 +52,9 @@ Route::get('/contact-us', function () {
 })->name('contact');
 
 // Testing URL
-Route::get('/users', function () {
-    return view('admin/users/users');
-})->name('users');
+// Route::get('/users', function () {
+//     return view('admin/users/index');
+// })->name('users');
 
 
 Route::post('/contact-us', 'MailController@contactUs');
@@ -83,6 +83,13 @@ Route::prefix('admin')->group(function () {
     Route::get('sliders/{slider}/edit', 'AdminController@sliderEdit')->name('sliders.edit');
     Route::put('sliders/{slider}', 'AdminController@sliderUpdate')->name('sliders.update');
     Route::delete('sliders/{slider}', 'AdminController@sliderDestroy')->name('sliders.destroy');
+
+    //  Users
+    Route::get('users', 'AdminController@userIndex')->name('users.index');
+    Route::post('users', 'AdminController@userStore')->name('users.store');
+    Route::get('users/{user}/edit', 'AdminController@userEdit')->name('users.edit');
+    Route::put('users/{user}', 'AdminController@userUpdate')->name('users.update');
+    Route::delete('users/{user}', 'AdminController@userDestroy')->name('users.destroy');
 
     Route::post('offers/activate', 'OfferController@activate')->name('offers.activate');
 

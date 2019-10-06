@@ -6,12 +6,14 @@ use App\Offer;
 use App\Place;
 use App\Settings;
 use App\Slider;
+use App\User;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
 use function response;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -147,5 +149,77 @@ class AdminController extends Controller
         config(['settings.offer_message' => $request->message]);
 
         return redirect()->route('admin');
+    }
+
+    // User management
+    public function userIndex()
+    {
+        $users = User::all();
+
+        // return $users;
+
+        return view('admin.users.index', compact('users'));
+    }
+
+    public function userEdit(User $user)
+    {
+        $users = User::all();
+
+        $display_form = true;
+
+        return view('admin.users.index', compact('user', 'users', 'display_form'));
+    }
+
+    public function userStore(Request $request)
+    {
+        $valid = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = new User();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = Hash::make($request->get('password'));
+
+        try {
+            $user = $user->saveOrFail();
+
+//            return \response()->json($place);
+
+            } catch (Throwable $e) {
+    //            return \response()->json($e);
+            }
+
+        return redirect()->route('users.index')->withSuccess('User created');
+    }
+
+    public function userUpdate(Request $request, User $user)
+    {
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = Hash::make($request->get('password'));
+
+        if ($user->save()) {
+
+            return redirect()->route('users.index');
+//            self::success('Visitor ' . $visitor->name . ' has been updated.');
+        }
+
+        return response()->json(["updated" => false]);
+    }
+
+    public function userDestroy(User $user)
+    {
+        //
+        try {
+            $user->delete();
+        } catch (Exception $e) {
+
+        }
+
+        return redirect()->route('users.index')->withSuccess('User deleted successfully');
+//        return \response()->json(["destroyed" => true]);
     }
 }

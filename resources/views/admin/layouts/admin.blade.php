@@ -89,7 +89,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('home') }}"> Visit site</a>
-                                <a class="dropdown-item" href="{{route('users')}}">Manage Users</a>
+                                <a class="dropdown-item" href="{{ route('users.index') }}">{{ __('Manage Users') }}</a>
                                 <hr>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
