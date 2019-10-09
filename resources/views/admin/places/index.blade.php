@@ -1,10 +1,10 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-    {{-- {{ $places }} --}}
+
     {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
     {{-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> --}}
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {{--    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> --}}
 
     <div class="container">
@@ -55,7 +55,7 @@
                                         <div class="fileUpload btn btn-primary fake-shadow" style="width:100%">
                                             <span><i class="glyphicon glyphicon-upload"></i> Upload Image</span>
                                             <input id="logo-id" name="logo" type="file" class="attachment_upload"
-                                                {{ isset($place) ? null : 'required' }}>
+                                                   {{ isset($place) ? null : 'required' }} accept="image/*">
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +105,8 @@
                                class="btn btn-warning float-left">Update</a>
 
                             @if($place->offers_count == 0)
-                                <form action="{{ route('places.destroy', ['id' => $place->id]) }}" method="post">
+                                <form class="deleteForm" action="{{ route('places.destroy', ['id' => $place->id]) }}"
+                                      method="post">
                                     @csrf
                                     <input type="hidden" name="_method" value="delete"/>
                                     <button type="submit" class="btn btn-danger float-left">Delete</button>
@@ -185,17 +186,21 @@
         $("#logo-id").change(function () {
             readURL(this);
         });
-    });
 
+        $('.toggler').on('click', function (event) {
+            if ($('.add-place').hasClass('toggle') == false) {
+                $('.add-place').addClass('toggle');
+                $(this).text('New Location');
+            } else {
+                $('.add-place').removeClass('toggle');
+                $(this).text('Close');
+            }
+        });
 
-    $('.toggler').on('click', function (event) {
-        if ($('.add-place').hasClass('toggle') == false) {
-            $('.add-place').addClass('toggle');
-            $(this).text('New Location');
-        } else {
-            $('.add-place').removeClass('toggle');
-            $(this).text('Close');
-        }
+        $('.deleteForm').submit(function () {
+            var c = confirm("Delete this Place?");
+            return c; //you can just return c because it will be true or false
+        });
     });
 </script>
 @stop

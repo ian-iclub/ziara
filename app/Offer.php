@@ -217,4 +217,23 @@ class Offer extends Model
         return $this->belongsTo('App\Place');
     }
 
+    public function getPeriodAttribute($value)
+    {
+        $string = "";
+
+        $periods = explode(" - ", $value);
+
+        foreach ($periods as $period) {
+            if ($string == "")
+                $string .= explode("/", $period)[0];
+            else
+                $string .= ' - ' . explode("/", $period)[0];
+        }
+
+//        dd($string);
+
+        return $string;
+//        return ucfirst($value);
+    }
+
 }

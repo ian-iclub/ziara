@@ -4,7 +4,7 @@
 {{-- {{ $users }} --}}
 {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
 {{-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> --}}
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{{--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
 {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> --}}
 
 
@@ -49,41 +49,50 @@
                         @endisset
                         @csrf
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputTitle">Name</label>
                                     <input type="text" class="form-control" id="inputTitle" name="name" required
                                         placeholder="Username" value="{{ $user->name ?? null }}">
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="inputLocation">Email</label>
-                                    <input type="text" class="form-control" id="inputLocation" name="email" required
-                                        placeholder="Email Address" value="{{ $user->email ?? null }}">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" name="email" required
+                                           placeholder="Email Address" value="{{ $user->email ?? null }}">
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="inputLocation">Password</label>
-                                    <input type="password" class="form-control" id="inputLocation" name="password" required
-                                        placeholder="Enter Password">
+                                    <label for="inputPassword">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword" name="password"
+                                           required
+                                           placeholder="Enter Password">
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputLocation">Confirm Password</label>
                                     <input type="password" class="form-control" id="password-confirm"
-                                        name="password_confirmation" required placeholder="Enter Password">
+                                           name="password_confirmation" required placeholder="Enter Password">
                                 </div>
+                            </div>
+                            <div class="col-md-12">
                                 @if ($errors->any())
-                                <style>
-                                    .toggle {
-                                        display: block;
-                                    }
+                                    <style>
+                                        .toggle {
+                                            display: block;
+                                        }
 
-                                </style>
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                                    </style>
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 @endif
                                 <button type="submit" class="btn btn-primary float-right">Submit</button>
                             </div>
@@ -117,7 +126,8 @@
                     <td>
                         <a href="{{ route('users.edit', ['id' => $user->id]) }}"
                             class="btn btn-warning float-left">Update</a>
-                        <form action="{{ route('users.destroy', ['id' => $user->id]) }}" method="post">
+                        <form class="deleteForm" action="{{ route('users.destroy', ['id' => $user->id]) }}"
+                              method="post">
                             @csrf
                             <input type="hidden" name="_method" value="delete" />
                             <button type="submit" class="btn btn-danger float-left">Delete</button>
@@ -172,27 +182,25 @@
 
 <script>
     $(document).ready(function () {
-        var brand = document.getElementById('logo-id');
-        brand.className = 'attachment_upload';
-        brand.onchange = function () {
-            document.getElementById('fakeUploadLogo').value = this.value.substring(12);
-        };
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('.img-preview').attr('src', e.target.result);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#logo-id").change(function () {
-            readURL(this);
-        });
-    });
-
+        // var brand = document.getElementById('logo-id');
+        // brand.className = 'attachment_upload';
+        // brand.onchange = function () {
+        //     document.getElementById('fakeUploadLogo').value = this.value.substring(12);
+        // };
+        //
+        // function readURL(input) {
+        //     if (input.files && input.files[0]) {
+        //         var reader = new FileReader();
+        //
+        //         reader.onload = function (e) {
+        //             $('.img-preview').attr('src', e.target.result);
+        //         };
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+        // $("#logo-id").change(function () {
+        //     readURL(this);
+        // });
 
     $('.toggler').on('click', function (event) {
         if ($('.add-place').hasClass('toggle') == false) {
@@ -204,5 +212,10 @@
         }
     });
 
+        $('.deleteForm').submit(function () {
+            var c = confirm("Delete this User?");
+            return c; //you can just return c because it will be true or false
+        });
+    });
 </script>
 @stop

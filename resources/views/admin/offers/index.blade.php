@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{{--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
 {{--<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">--}}
 
 <div class="container">
@@ -36,56 +36,102 @@
                         <form action="{{ route('offers.store') }}" method="post">
                             @endisset
                             @csrf
-                            <div class="form-group">
-                                <label for="inputLocation">Location</label>
-                                <select class="form-control" id="inputLocation" name="place_id" required>
-                                    @foreach($places as $place)
-                                    <option value="{{ $place->id }}"
-                                        {{ isset($offer) && $place->id == $offer->place_id ? 'selected' : ''}}>
-                                        {{ $place->title }}
-                                        - {{ $place->location }}</option>
-                                    @endforeach
-                                </select>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputLocation">Location</label>
+                                        <select class="form-control select-input" id="inputLocation" name="place_id"
+                                                required>
+                                            @foreach($places as $place)
+                                                <option value="{{ $place->id }}"
+                                                    {{ isset($offer) && $place->id == $offer->place_id ? 'selected' : ''}}>
+                                                    {{ $place->title }}
+                                                    - {{ $place->location }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputPeriod">Initial Period</label>
+                                                <input type="text" class="form-control from" id="inputPeriod"
+                                                       name="init_period" required
+                                                       placeholder="E.g. August, November ..."
+                                                       value="{{ $offer->period ?? null }}">
+                                                {{-- <select class="form-control" id="inputPeriod" name="period" required>
+                                                    <option value="{{ $offer->period ?? null }}" selected
+                                                        style="color:black;background-color:#E4A300">{{ $offer->period ?? null }}
+                                                    </option>
+                                                    <option value="January">January</option>
+                                                    <option value="February">February</option>
+                                                    <option value="March">March</option>
+                                                    <option value="April">April</option>
+                                                    <option value="May">May</option>
+                                                    <option value="June">June</option>
+                                                    <option value="July">July</option>
+                                                    <option value="August">August</option>
+                                                    <option value="September">September</option>
+                                                    <option value="October">October</option>
+                                                    <option value="November">November</option>
+                                                    <option value="December">December</option>
+                                                </select> --}}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputPeriod">Final Period</label>
+                                                <input type="text" class="form-control to" id="inputPeriod"
+                                                       name="final_period"
+                                                       placeholder="E.g. August, November ..."
+                                                       value="{{ $offer->period ?? null }}">
+                                                {{-- <select class="form-control" id="inputPeriod" name="period" required>
+                                                    <option value="{{ $offer->period ?? null }}" selected
+                                                        style="color:black;background-color:#E4A300">{{ $offer->period ?? null }}
+                                                    </option>
+                                                    <option value="January">January</option>
+                                                    <option value="February">February</option>
+                                                    <option value="March">March</option>
+                                                    <option value="April">April</option>
+                                                    <option value="May">May</option>
+                                                    <option value="June">June</option>
+                                                    <option value="July">July</option>
+                                                    <option value="August">August</option>
+                                                    <option value="September">September</option>
+                                                    <option value="October">October</option>
+                                                    <option value="November">November</option>
+                                                    <option value="December">December</option>
+                                                </select> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputPeriod">Period</label>
-                                <input type="text" class="form-control" id="inputPeriod" name="period" required
-                                   placeholder="E.g. August, November ..." value="{{ $offer->period ?? null }}">
-                                {{-- <select class="form-control" id="inputPeriod" name="period" required>
-                                    <option value="{{ $offer->period ?? null }}" selected
-                                        style="color:black;background-color:#E4A300">{{ $offer->period ?? null }}
-                                    </option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
-                                </select> --}}
-                            </div>
-                            <div class="form-group">
-                                <label for="inputDetails">Details</label>
-                                <input type="text" class="form-control" id="inputDetails" name="details" required
-                                    placeholder="Details concerning the offer" value="{{ $offer->details ?? null }}">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="inputDetails">Details</label>
+                                        <input type="text" class="form-control" id="inputDetails" name="details"
+                                               required
+                                               placeholder="Details concerning the offer"
+                                               value="{{ $offer->details ?? null }}">
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="inputPrice">Price</label>
                                         <input type="number" class="form-control" id="inputPrice" name="price" required
-                                            placeholder='00' min="1" value="{{ $offer->price ?? null }}">
+                                               placeholder='0' min="0" value="{{ $offer->price ?? null }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="inputCurrency">Currency</label>
-                                        <select class="form-control" id="inputCurrency" name="currency" required>
+                                        <select class="form-control select-input" id="inputCurrency" name="currency"
+                                                required>
                                             <option value="KES"
                                                 {{ isset($offer) && 'KES' == $offer->currency ? 'selected' : ''}}>
                                                 KES
@@ -161,7 +207,8 @@
                         <a href="{{ route('offers.edit', ['id' => $offer->id]) }}" class="btn btn-warning">Update</a>
                     </td>
                     <td>
-                        <form action="{{ route('offers.destroy', ['id' => $offer->id]) }}" method="post">
+                        <form class="deleteForm" action="{{ route('offers.destroy', ['id' => $offer->id]) }}"
+                              method="post">
                             @csrf
                             <input type="hidden" name="_method" value="delete" />
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -184,15 +231,48 @@
 </style>
 
 <script>
-    $('.toggler').on('click', function (event) {
-        if ($('.add-place').hasClass('toggle') == false) {
-            $('.add-place').addClass('toggle');
-            $(this).text('New Offer');
-        } else {
-            $('.add-place').removeClass('toggle');
-            $(this).text('Close');
-        }
-    });
+    $(document).ready(function () {
+        $('.toggler').on('click', function (event) {
+            if ($('.add-place').hasClass('toggle') == false) {
+                $('.add-place').addClass('toggle');
+                $(this).text('New Offer');
+            } else {
+                $('.add-place').removeClass('toggle');
+                $(this).text('Close');
+            }
+        });
 
+        $('.deleteForm').submit(function () {
+            var c = confirm("Delete this Offer?");
+            return c; //you can just return c because it will be true or false
+        });
+
+
+        var startDate = new Date();
+        var fechaFin = new Date();
+        var FromEndDate = new Date();
+        var ToEndDate = new Date();
+
+        $('.from').datepicker({
+            autoclose: true,
+            minViewMode: 1,
+            format: 'M/yyyy'
+        }).on('changeDate', function (selected) {
+            startDate = new Date(selected.date.valueOf());
+            startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
+            $('.to').datepicker('setStartDate', startDate);
+        });
+
+        $('.to').datepicker({
+            autoclose: true,
+            minViewMode: 1,
+            format: 'M/yyyy'
+        }).on('changeDate', function (selected) {
+            FromEndDate = new Date(selected.date.valueOf());
+            FromEndDate.setDate(FromEndDate.getDate(new Date(selected.date.valueOf())));
+            $('.from').datepicker('setEndDate', FromEndDate);
+        });
+
+    });
 </script>
 @stop

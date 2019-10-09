@@ -46,15 +46,23 @@ class PlaceController extends Controller
     public function store(Request $request)
     {
         //
+//        $validator = $request->validate([
+//            'logo' => 'max:2120', //5MB
+//        ]);
+//        return $request;
+
         $path = "";
 
         if ($request->hasFile('logo')) {
+//            return $request;
             $path = Storage::putFile('uploads/places', $request->file('logo'));
 
+
+//            return "path: " . $path;
 //                self::success('Document of ' . $request->input('name') . ' created successfully');
         }
 
-//        return $path;
+//        return "path: " . $path;
 
         $place = new Place();
         $place->image_url = $path;

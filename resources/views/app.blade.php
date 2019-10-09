@@ -56,11 +56,15 @@
     <!-- Theme style  -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
     <!-- Modernizr JS -->
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="{{ asset('js/respond.min.js') }}"></script>
+    {{--
+    <script src="{{ asset('js/respond.min.js') }}"></script>--}}
 	<![endif]-->
 
     @yield('adminlte_css')
@@ -70,8 +74,6 @@
 
 @yield('body')
 
- <!-- jQuery -->
- <script src="{{ asset('js/jquery.min.js') }}"></script>
 <!-- jQuery Easing -->
 <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
 <!-- Bootstrap -->

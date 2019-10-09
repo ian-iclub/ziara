@@ -28,6 +28,10 @@
         .btn {
             font-size: 14px;
         }
+
+        .select-input {
+            height: 50px;
+        }
     </style>
 
     @yield('css')

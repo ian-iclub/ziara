@@ -37,24 +37,27 @@
             <div class="jumbotron col-md-12">
                 <h3 class="">Offer Headers</h3>
                 <hr class="my-4">
-                <form method="post" action="{{ route('offers_display.edit') }}">
+                <form class="form-horizontal" method="post" action="{{ route('offers_display.edit') }}">
                     @csrf
                     <input type="hidden" name="id" value="{{ $settings['id'] }}">
                     <div class="form-group">
-                        <label for="inputType">Primary Header</label>
-                        <input type="text" class="form-
-                        ontrol" id="inputType" name="offer_type" required
-                               placeholder="E.g Easter offers" value="{{ $settings['offer_type'] ?? null }}">
+                        <label for="inputType" class="control-label col-sm-2">Primary Header</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputType" name="offer_type" required
+                                   placeholder="E.g Easter offers" value="{{ $settings['offer_type'] ?? null }}">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputMessage">Secondary Header</label>
-                        <input type="text" class="form-control" id="inputMessage" name="offer_message" required
-                               placeholder="E.g. Offers valid until end of May"
-                               value="{{ $settings['offer_message'] ?? null }}">
+                        <label for="inputMessage" class="control-label col-sm-2">Secondary Header</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputMessage" name="offer_message" required
+                                   placeholder="E.g. Offers valid until end of May"
+                                   value="{{ $settings['offer_message'] ?? null }}">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                    {{--                    <div class="row">--}}
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                    {{--                    </div>--}}
                 </form>
             </div>
         </div>

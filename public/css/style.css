@@ -2023,7 +2023,7 @@ article .desc .meta span a {
     border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
     height: 50px;
 }
 

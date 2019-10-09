@@ -10,10 +10,10 @@ use App\User;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
 use function response;
-use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -43,7 +43,7 @@ class AdminController extends Controller
 
 //            $offer['period'] = array_unique(array_flatten($period));
 
-            $offer['period'] = implode('/', array_unique($offer->activeOffers->pluck('period')->toArray()));
+            $offer['period'] = implode(' / ', array_unique($offer->activeOffers->pluck('period')->toArray()));
 
         }
 

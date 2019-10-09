@@ -9,6 +9,7 @@ use App\Slider;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
 use Throwable;
 
 class OfferController extends Controller
@@ -38,6 +39,8 @@ class OfferController extends Controller
             return view('admin.offers.index', compact('places', 'offers'));
         }
 
+//        return $offers;
+
         return view('admin.offers.index', compact('places', 'offers'));
 
 //        return response()->json($offers);
@@ -64,8 +67,19 @@ class OfferController extends Controller
         //
 
 //        return $request;
+        $data = $request->all();
 
-        $offer = Offer::create($request->all());
+//        return $data->init_period;
+
+        if (Input::get('final_period') != null) {
+            $data['period'] = $data['init_period'] . ' - ' . $data['final_period'];
+        } else {
+            $data['period'] = $data['init_period'];
+        }
+
+//        return $data;
+
+        $offer = Offer::create($data);
 
         return redirect()->route('offers.index');
     }
@@ -148,7 +162,7 @@ class OfferController extends Controller
         foreach ($offers as $offer) {
             collect($offer);
 
-            $offer['period'] = implode('/', array_unique($offer->activeOffers->pluck('period')->toArray()));
+            $offer['period'] = implode(' / ', array_unique($offer->activeOffers->pluck('period')->toArray()));
         }
 
         $settings = Settings::all()->first();
