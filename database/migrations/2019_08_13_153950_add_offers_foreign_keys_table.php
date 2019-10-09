@@ -15,7 +15,7 @@ class AddOffersForeignKeysTable extends Migration
     {
         //
         Schema::table('offers', function (Blueprint $table) {
-            $table->unsignedBigInteger('place_id');
+            $table->unsignedBigInteger('place_id')->nullable();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('CASCADE');
         });
